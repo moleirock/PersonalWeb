@@ -85,33 +85,42 @@ export class Player {
         this.currentState = this.states[state];
         this.currentState.enter();
     }
-    screenPosition(about, projects, contact,dialogueCount) {
+    screenPosition(about, projects, contact,dialogueCount,input) {
         buttonHome.addEventListener("click", (e) => {
+            input.push('ArrowUp');
             sections.style.transition = "transform 0.5s ease-in-out 0s";
             this.speed = 0;
             setTimeout(() => {
                 sections.style.transition = "unset";
+                input.splice(input.indexOf("ArrowUp"), 1);
             }, 500);
+            
         });
         buttonAbout.addEventListener("click", (e) => {
+            input.push('ArrowUp');
             sections.style.transition = "transform 0.5s ease-in-out 0s";
             this.speed = -about;
             setTimeout(() => {
                 sections.style.transition = "unset";
+                input.splice(input.indexOf("ArrowUp"), 1);
             }, 500);
         });
         buttonProjects.addEventListener("click", (e) => {
+            input.push('ArrowUp');
             sections.style.transition = "transform 0.5s ease-in-out 0s";
             this.speed = -projects;
             setTimeout(() => {
                 sections.style.transition = "unset";
+                input.splice(input.indexOf("ArrowUp"), 1);
             }, 500);
         });
         buttonContact.addEventListener("click", (e) => {
+            input.push('ArrowUp');
             sections.style.transition = "transform 0.5s ease-in-out 0s";
             this.speed = -contact;
             setTimeout(() => {
                 sections.style.transition = "unset";
+                input.splice(input.indexOf("ArrowUp"), 1);
             }, 500);
         });
     }

@@ -12,7 +12,6 @@ export class App {
         this.projectsLeftX = document.querySelector(".scene__projects").getBoundingClientRect().left;
         this.contactLeftX = document.querySelector(".scene__contact").getBoundingClientRect().left;
         this.particles = [];
-
         this.dialogueCount = 0;
     }
 
@@ -20,18 +19,18 @@ export class App {
         this.player.update(this.input.keys);
 
         // handle particles
-        this.particles.forEach((particle,index)=>{
+        this.particles.forEach((particle, index) => {
             particle.update();
-            if(particle.markedForDeletion) this.particles.splice(index,1);
-        })
+            if (particle.markedForDeletion) this.particles.splice(index, 1);
+        });
     }
     draw(context, deltatime) {
         this.player.draw(context, deltatime);
 
         // drawing particles
-        this.particles.forEach((particle)=>{
+        this.particles.forEach((particle) => {
             particle.draw(context);
-        })
+        });
     }
     drawCollision(context) {
         // collision circle
@@ -60,7 +59,6 @@ export class App {
             getDialogue("contact");
             ++this.dialogueCount;
         }
-        
     }
     dialoguePlayer(context) {
         window.addEventListener("click", (e) => {
@@ -73,6 +71,6 @@ export class App {
         });
     }
     navigationPosition() {
-        this.player.screenPosition(this.aboutLeftX, this.projectsLeftX, this.contactLeftX,this.dialogueCount);
+        this.player.screenPosition(this.aboutLeftX, this.projectsLeftX, this.contactLeftX, this.dialogueCount, this.input.keys);
     }
 }
