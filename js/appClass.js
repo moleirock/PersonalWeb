@@ -13,6 +13,7 @@ export class App {
         this.contactLeftX = document.querySelector(".scene__contact").getBoundingClientRect().left;
         this.particles = [];
         this.dialogueCount = 0;
+        this.tourAcepted = false;
     }
 
     update() {
@@ -46,18 +47,22 @@ export class App {
         context.fill();
     }
     dialogue() {
-        if (this.player.speed === 0 && this.dialogueCount < 1) {
-            getDialogue("home");
-            ++this.dialogueCount;
-        } else if (-this.player.speed >= this.aboutLeftX && this.dialogueCount < 2) {
-            getDialogue("about");
-            ++this.dialogueCount;
-        } else if (-this.player.speed >= this.projectsLeftX && this.dialogueCount < 3) {
-            getDialogue("projects");
-            ++this.dialogueCount;
-        } else if (-this.player.speed >= this.contactLeftX && this.dialogueCount < 4) {
-            getDialogue("contact");
-            ++this.dialogueCount;
+        if (this.tourAcepted) {
+            if (this.player.speed === 0 && this.dialogueCount < 1) {
+                getDialogue("home");
+                ++this.dialogueCount;
+            } else if (-this.player.speed >= this.aboutLeftX && this.dialogueCount < 2) {
+                getDialogue("about");
+                ++this.dialogueCount;
+            } else if (-this.player.speed >= this.projectsLeftX && this.dialogueCount < 3) {
+                getDialogue("projects");
+                ++this.dialogueCount;
+            } else if (-this.player.speed >= this.contactLeftX && this.dialogueCount < 4) {
+                getDialogue("contact");
+                ++this.dialogueCount;
+                this.navigationPosition();
+                this.tourAcepted = false;
+            }
         }
     }
     dialoguePlayer(context) {
@@ -73,4 +78,24 @@ export class App {
     navigationPosition() {
         this.player.screenPosition(this.aboutLeftX, this.projectsLeftX, this.contactLeftX, this.dialogueCount, this.input.keys);
     }
+    askTour() {
+        dialogueButtonReject.classList.remove("display-none");
+        dialogueButton.innerText = "Yes";
+        getDialogue("tour");
+        dialogueButtonReject.addEventListener("click", () => {
+            dialogue.classList.add("display-none");
+            dialogueButtonReject.classList.add("display-none");
+            dialogueButton.innerText = "Skip";
+            this.dialogueCount = 4;
+            this.navigationPosition();
+        });
+        dialogueButton.addEventListener("click", () => {
+            dialogue.classList.add("display-none");
+            dialogueButtonReject.classList.add("display-none");
+            dialogueButton.innerText = "Skip";
+            this.tourAcepted = true;
+            this.navigationPosition();
+        });
+    }
+    
 }

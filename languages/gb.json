@@ -6,6 +6,8 @@
         "title": "<span class=\"text-color-secondary\">About </span>Me"
     },
     "dialogue": {
+        "tour": ["Do you want a guided tour?"],
+        "controlsBlocked": ["Can't use controls before end guide tour!"],
         "home": [
             "Do you really want to know who Alberto is?",
             "Well, I will tell you... He IS THE WORST HUMAN in the world!!",
@@ -19,7 +21,7 @@
         ],
         "projects": ["projects"],
         "contact": ["contact"],
-        "shortHeight":"Ups! Your screen isn't high enough.",
-        "playerFace":["Ouch! Don't touch my face it hurts!"]
+        "shortHeight": "Ups! Your screen isn't high enough.",
+        "playerFace": ["Ouch! Don't touch my face it hurts!"]
     }
 }

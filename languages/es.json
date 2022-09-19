@@ -1,11 +1,13 @@
 {
-    "home":{
-        "title":"Quién es <br/><span class=\"text-color-secondary font-size-60\">Alberto Moleiro</span>?"
+    "home": {
+        "title": "Quién es <br/><span class=\"text-color-secondary font-size-60\">Alberto Moleiro</span>?"
     },
-    "about":{
-        "title":"<span class=\"text-color-secondary\">Sobre </span>Mí"
+    "about": {
+        "title": "<span class=\"text-color-secondary\">Sobre </span>Mí"
     },
     "dialogue": {
+        "tour": ["¿Quieres una visita guiada?"],
+        "controlsBlocked": ["No se puden usar los controles hasta terminar la visita guiada."],
         "home": [
             "De verdad quieres saber quien es Alberto?",
             "Bien, te lo diré... Él es EL PEOR HUMANO del mundo!!",
@@ -20,7 +22,7 @@
         ],
         "projects": ["proyectos"],
         "contact": ["contacto"],
-        "shortHeight":"Ups! Tu pantalla no es lo suficientemente alta.",
-        "playerFace":["¡Ay! Más cuidado que eso duele!"]
+        "shortHeight": "Ups! Tu pantalla no es lo suficientemente alta.",
+        "playerFace": ["¡Ay! Más cuidado que eso duele!"]
     }
 }

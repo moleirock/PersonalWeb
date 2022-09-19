@@ -27,7 +27,7 @@ window.addEventListener("load", () => {
     const app = new App(canvas.width, canvas.height);
 
     app.dialoguePlayer(ctxCollision);
-    app.navigationPosition();
+    app.askTour();
     function animate(timeStamp) {
         ctx.clearRect(0, 0, canvas.width, canvas.height);
         ctxCollision.clearRect(0, 0, canvasCollision.width, canvasCollision.height);
