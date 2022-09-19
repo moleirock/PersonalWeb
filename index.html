@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en-EN">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="description" content="!Bienvenido a la Web personal de Alberto Moleiro Sánchez!😄" />
+
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&family=Roboto:wght@400;700;900&display=swap"
+            rel="stylesheet"
+        />
+
+        <link rel="preload" href="css/normalize.css" as="style" />
+        <link rel="stylesheet" href="css/normalize.css" />
+
+        <link rel="preload" href="css/style.css" as="style" />
+        <link rel="stylesheet" href="css/style.css" />
+
+        <title>Alberto Moleiro Web Developer</title>
+    </head>
+    <body>
+        <button id="toggleTheme" class="button-control button-control--theme">
+            <svg id="sun" xmlns="http://www.w3.org/2000/svg" height="40" width="40">
+                <path
+                    d="M20 25.542q2.292 0 3.917-1.604 1.625-1.605 1.625-3.938 0-2.292-1.604-3.917-1.605-1.625-3.938-1.625-2.292 0-3.917 1.604-1.625 1.605-1.625 3.938 0 2.292 1.604 3.917 1.605 1.625 3.938 1.625Zm0 2.791q-3.458 0-5.896-2.437-2.437-2.438-2.437-5.896 0-3.458 2.437-5.896 2.438-2.437 5.896-2.437 3.458 0 5.896 2.437 2.437 2.438 2.437 5.896 0 3.458-2.437 5.896-2.438 2.437-5.896 2.437ZM3.042 21.375q-.584 0-.98-.396-.395-.396-.395-.979t.395-.979q.396-.396.98-.396h3.916q.584 0 .979.396.396.396.396.979t-.396.979q-.395.396-.979.396Zm30 0q-.584 0-.98-.396-.395-.396-.395-.979t.395-.979q.396-.396.98-.396h3.916q.584 0 .98.396.395.396.395.979t-.395.979q-.396.396-.98.396ZM20 8.333q-.583 0-.979-.395-.396-.396-.396-.98V3.042q0-.584.396-.979.396-.396.979-.396t.979.396q.396.395.396.979v3.916q0 .584-.396.98-.396.395-.979.395Zm0 30q-.583 0-.979-.395-.396-.396-.396-.98v-3.916q0-.584.396-.98.396-.395.979-.395t.979.395q.396.396.396.98v3.916q0 .584-.396.98-.396.395-.979.395ZM9.792 11.75 7.625 9.625q-.417-.417-.396-1 .021-.583.396-1 .417-.417 1-.417t1 .417l2.125 2.167q.375.416.375.979 0 .562-.375.979-.375.375-.958.375-.584 0-1-.375Zm20.583 20.625-2.125-2.167q-.375-.416-.375-1 0-.583.375-.958.417-.417.979-.417.563 0 .979.417l2.167 2.125q.417.417.396 1-.021.583-.396 1-.417.417-1 .417t-1-.417ZM28.25 11.75q-.417-.417-.417-.979 0-.563.417-.979l2.125-2.167q.417-.417 1-.396.583.021 1 .396.417.417.417 1t-.417 1l-2.167 2.125q-.416.375-.979.375-.562 0-.979-.375ZM7.625 32.375q-.417-.417-.417-1t.417-1l2.167-2.125q.416-.417.979-.417.562 0 .979.417.417.417.417.979 0 .563-.417.979l-2.125 2.167q-.417.417-1 .396-.583-.021-1-.396ZM20 20Z"
+                />
+            </svg>
+
+            <svg id="moon" class="display-none" xmlns="http://www.w3.org/2000/svg" height="40" width="40">
+                <path
+                    d="M20 35q-6.25 0-10.625-4.375T5 20q0-6.25 4.375-10.625T20 5q.417 0 .854.021.438.021 1.021.104-1.583 1.292-2.479 3.229-.896 1.938-.896 4.146 0 3.75 2.625 6.375T27.5 21.5q2.208 0 4.146-.854 1.937-.854 3.229-2.354.083.541.104.937.021.396.021.771 0 6.25-4.375 10.625T20 35Zm0-2.792q4.25 0 7.479-2.541 3.229-2.542 4.229-6.167-1 .375-2.062.583-1.063.209-2.146.209-4.875 0-8.333-3.459-3.459-3.458-3.459-8.333 0-.958.188-2 .187-1.042.604-2.292-3.792 1.209-6.25 4.48Q7.792 15.958 7.792 20q0 5.083 3.562 8.646 3.563 3.562 8.646 3.562Zm-.25-12Z"
+                />
+            </svg>
+        </button>
+        <div id="language" class="language">
+            <img class="language__icon display-none" id="flagGb" src="assets/icons/gb.svg" alt="United Kingdom flag" data-language="gb" />
+            <img class="language__icon" id="flagEs" src="assets/icons/es.svg" alt="Spanish flag" data-language="es" />
+        </div>
+        <nav id="navigationControl" class="navigation">
+            <div class="navigation__controls">
+                <button id="buttonHome" class="button-control" >
+                    <svg xmlns="http://www.w3.org/2000/svg" height="40" width="40">
+                        <path
+                            d="M13.333 35v-6.667h13.334V35ZM5 27.083v-7.625q0-.541.208-1.041.209-.5.625-.834L18.333 6.5q.334-.333.771-.479.438-.146.896-.146t.896.146q.437.146.771.479L25 9.458ZM7.5 35q-1.042 0-1.771-.729Q5 33.542 5 32.5v-3.167l6.667-5.916V35Zm20.833 0V21.333L21.208 15l5.042-4.458 7.917 7.041q.416.375.625.855.208.479.208 1.02V32.5q0 1.042-.729 1.771Q33.542 35 32.5 35Z"
+                        />
+                    </svg>
+                </button>
+                <button id="buttonAbout" class="button-control" >
+                    <svg xmlns="http://www.w3.org/2000/svg" height="40" width="40">
+                        <path
+                            d="M20 19.958q-2.75 0-4.562-1.812-1.813-1.813-1.813-4.563t1.813-4.562Q17.25 7.208 20 7.208t4.562 1.813q1.813 1.812 1.813 4.562t-1.813 4.563Q22.75 19.958 20 19.958ZM6.667 33.333v-4.166q0-1.542.77-2.688.771-1.146 2.021-1.729 2.709-1.25 5.313-1.896 2.604-.646 5.229-.646t5.208.646q2.584.646 5.334 1.896 1.25.625 2.02 1.75.771 1.125.771 2.667v4.166Zm2.791-2.791h21.084v-1.375q0-.584-.334-1.125-.333-.542-.833-.792-2.542-1.25-4.771-1.75T20 25q-2.375 0-4.625.5t-4.75 1.75q-.542.25-.854.792-.313.541-.313 1.125ZM20 17.208q1.542 0 2.583-1.041 1.042-1.042 1.042-2.584 0-1.541-1.042-2.583Q21.542 9.958 20 9.958q-1.542 0-2.583 1.042-1.042 1.042-1.042 2.583 0 1.542 1.042 2.584 1.041 1.041 2.583 1.041Zm0-3.625Zm0 16.959Z"
+                        />
+                    </svg>
+                </button>
+                <button id="buttonProjects" class="button-control" >
+                    <svg xmlns="http://www.w3.org/2000/svg" height="40" width="40">
+                        <path
+                            d="M6.125 35Q5 35 4.167 34.167q-.834-.834-.834-1.959V12.542q0-1.125.834-1.959Q5 9.75 6.125 9.75h7.5V6.125q0-1.125.813-1.958.812-.834 1.937-.834h7.25q1.125 0 1.937.834.813.833.813 1.958V9.75h7.5q1.125 0 1.958.833.834.834.834 1.959v19.666q0 1.125-.834 1.959Q35 35 33.875 35Zm10.25-25.25h7.25V6.125h-7.25Zm17.5 14.958h-9.667v2.75h-8.333v-2.75h-9.75v7.5h27.75Zm-15.25 0h2.792v-2.791h-2.792Zm-12.5-2.791h9.75v-2.792h8.333v2.792h9.667v-9.375H6.125ZM20 23.292Z"
+                        />
+                    </svg>
+                </button>
+                <button id="buttonContact" class="button-control" >
+                    <svg xmlns="http://www.w3.org/2000/svg" height="40" width="40">
+                        <path
+                            d="M6.125 33.333q-1.125 0-1.958-.833-.834-.833-.834-1.958V9.458q0-1.125.834-1.958.833-.833 1.958-.833h27.75q1.125 0 1.958.833.834.833.834 1.958v21.084q0 1.125-.834 1.958-.833.833-1.958.833ZM20 21.042 6.125 12.083v18.459h27.75V12.083Zm0-2.75 13.792-8.834H6.25ZM6.125 12.083V9.458v21.084Z"
+                        />
+                    </svg>
+                </button>
+            </div>
+        </nav>
+        <main class="main-content">
+            <div id="sections">
+                <div class="scene">
+                    <section class="scene__home">
+                        <h1 data-section="home" data-element="title" class="home__title">
+                            Who is <br /><span class="text-color-secondary font-size-60">Alberto Moleiro</span>?
+                        </h1>
+                        <div class="home__image">
+                            <picture>
+                                <source srcset="assets/img/controlsBig.png" type="image/png" media="(min-width:1000px)" />
+                                <img src="assets/img/controls.png" alt="control keys" />
+                            </picture>
+                        </div>
+                    </section>
+                    <section class="scene__about">
+                        <h2 data-section="about" data-element="title" class="about__title title">
+                            <span class="text-color-secondary">About </span>Me
+                        </h2>
+                        <div class="about__content">
+                            <picture>
+                                <source srcset="assets/img/demon-personal-image.webp" type="image/webp" />
+                                <img
+                                    class="about__image"
+                                    width="200"
+                                    heigth="300"
+                                    src="assets/img/demon-personal-image.png"
+                                    alt="Alberto Moleiro`s portrait with drawings on it"
+                                />
+                            </picture>
+                            <article class="about__text">
+                                <p>
+                                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ullam eos nostrum quam assumenda quasi,
+                                    molestiae dolorem nemo ad aperiam eligendi labore, voluptas, consequuntur harum maiores provident
+                                    asperiores exercitationem a. Quos.
+                                </p>
+                            </article>
+                        </div>
+                    </section>
+                    <section class="scene__projects">
+                        <h2 data-section="projects" data-element="title" class="projects__title title">
+                            Pro<span class="text-color-secondary">jects</span>
+                        </h2>
+                        <div class="projects__machine">
+                            <div class="machine__buttons">
+                                <button class="machine__button">Html5</button>
+                                <button class="machine__button">CSS3</button>
+                                <button class="machine__button">JavaScript</button>
+                                <button class="machine__button">NodeJs</button>
+                                <button class="machine__button">Sass</button>
+                                <button class="machine__button">Gulp.js</button>
+                                <button class="machine__button">Php</button>
+                                <button class="machine__button">MySQL</button>
+                            </div>
+                            <div class="machine__exhibitor">
+                                <button class="exhibitor__left">&lt;</button>
+                                <div class="projectCard"><img src="" alt="" class="projectCard__image"><h3 class="projectCard__title">Proyecto muy chulo</h3></div>
+                                <button class="exhibitor__right">&gt;</button>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="scene__contact">
+                        <h1>Who is <span class="text-color-secondary">Alberto Moleiro</span>?</h1>
+                    </section>
+                </div>
+            </div>
+            <picture>
+                <source srcset="assets/img/player10.webp" type="image/webp" media="(max-width:480px)" />
+                <source srcset="assets/img/player15.webp" type="image/webp" media="(min-width:480px)" />
+                <source srcset="assets/img/player15.png" type="image/png" media="(min-width:480px)" />
+                <img
+                    id="playerImage"
+                    width="200"
+                    heigth="300"
+                    src="assets/img/player10.png"
+                    alt="cartoon of a small gentleman with glasses"
+                />
+            </picture>
+            <canvas id="canvasPlayer"></canvas>
+            <canvas id="canvasCollision"></canvas>
+            <div id="dialogue" class="dialogue__overlay">
+                <div class="dialogue__box">
+                    <p id="dialogueText" class="dialogue__text"></p>
+                    <button id="dialogueButton" class="dialogue__button">Skip</button>
+                    <div class="dialogue__triangle"></div>
+                </div>
+            </div>
+        </main>
+
+        <div id="loading" class="loading"><p>Loading...</p></div>
+        <div class="shortHeight">
+            <div class="shortHeight__image">
+                <picture>
+                    <source srcset="assets/img/playerStanding.webp" type="image/webp" />
+                    <img width="200" heigth="300" src="assets/img/playerStanding.png" alt="" />
+                </picture>
+            </div>
+            <div class="dialogue__box dialogue__box--width90">
+                <p class="dialogue__text" data-section="dialogue" data-element="shortHeight">Ups! Your screen isn't high enough.</p>
+                <div class="dialogue__triangle"></div>
+            </div>
+        </div>
+
+        <script type="module" src="js/main.js"></script>
+    </body>
+</html>

@@ -1,0 +1,25 @@
+{
+    "home": {
+        "title": "Who is <br /><span class=\"text-color-secondary font-size-60\">Alberto Moleiro</span>?"
+    },
+    "about": {
+        "title": "<span class=\"text-color-secondary\">About </span>Me"
+    },
+    "dialogue": {
+        "home": [
+            "Do you really want to know who Alberto is?",
+            "Well, I will tell you... He IS THE WORST HUMAN in the world!!",
+            "Sure you're wondering why I hate him.",
+            "But first, you must know how to move."
+        ],
+        "about": [
+            "Wow! Who drew it? I mean... he's ugly enough without those drawings.",
+            "Well, one thing is quite clear. We'll never know.",
+            "Let's continuos with the tour, here is where \"Mr. Ego\" discribes himself."
+        ],
+        "projects": ["projects"],
+        "contact": ["contact"],
+        "shortHeight":"Ups! Your screen isn't high enough.",
+        "playerFace":["Ouch! Don't touch my face it hurts!"]
+    }
+}
