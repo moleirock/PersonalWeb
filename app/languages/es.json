@@ -1,0 +1,28 @@
+{
+    "home": {
+        "title": "Quién es <br/><span class=\"text-color-secondary font-size-60\">Alberto Moleiro</span>?"
+    },
+    "about": {
+        "title": "<span class=\"text-color-secondary\">Sobre </span>Mí"
+    },
+    "dialogue": {
+        "tour": ["¿Quieres una visita guiada?"],
+        "controlsBlocked": ["No se puden usar los controles hasta terminar la visita guiada."],
+        "home": [
+            "De verdad quieres saber quien es Alberto?",
+            "Bien, te lo diré... Él es EL PEOR HUMANO del mundo!!",
+            "Seguro que te preguntas porque le odio.",
+            "Pero primero, debes aprender a moverte."
+        ],
+        "about": [
+            "¡Vaya! ¿quién habrá dibujado eso? ",
+            "Sólo lo pregunto porque él ya es bastante feo sin añadir nada.",
+            "Bueno... una cosa está clara. Nunca sabremos quien lo hizo.",
+            "Continuemos con la visita. Aquí es dónde el \"Señor Ego\" se describe."
+        ],
+        "projects": ["proyectos"],
+        "contact": ["contacto"],
+        "shortHeight": "Ups! Tu pantalla no es lo suficientemente alta.",
+        "playerFace": ["¡Ay! Más cuidado que eso duele!"]
+    }
+}
