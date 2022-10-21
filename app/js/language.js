@@ -1,3 +1,10 @@
+// DOM SELECTOR
+const language = document.getElementById('language');
+const flagEs = document.getElementById('flagEs');
+const flagGb = document.getElementById('flagGb');
+
+const textsToChange = document.querySelectorAll("[data-section]");
+
 export function swapLanguage() {
     language.addEventListener("click", (e) => {
         flagEs.classList.toggle('display-none');
@@ -6,7 +13,7 @@ export function swapLanguage() {
     });
 }
 
-const textsToChange = document.querySelectorAll("[data-section]");
+
 const changeLanguage = async (language) => {
     const requestJson = await fetch(`languages/${language}.json`);
     const texts = await requestJson.json();

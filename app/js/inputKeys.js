@@ -1,3 +1,8 @@
+// DOM SELECTOR
+const dialogue = document.getElementById('dialogue');
+
+
+
 export class InputHandler {
     constructor() {
         this.keys = [];

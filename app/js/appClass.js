@@ -2,21 +2,27 @@ import { Player } from "./player.js";
 import { InputHandler } from "./inputKeys.js";
 import { getDialogue } from "./dialogue.js";
 
+// DOM SELECTOR
+const aboutLeftX = document.querySelector(".scene__about").getBoundingClientRect().left;
+const projectsLeftX = document.querySelector(".scene__projects").getBoundingClientRect().left;
+const contactLeftX = document.querySelector(".scene__contact").getBoundingClientRect().left;
+
 export class App {
     constructor(width, height) {
         this.width = width;
         this.height = height;
         this.player = new Player(this);
         this.input = new InputHandler();
-        this.aboutLeftX = document.querySelector(".scene__about").getBoundingClientRect().left;
-        this.projectsLeftX = document.querySelector(".scene__projects").getBoundingClientRect().left;
-        this.contactLeftX = document.querySelector(".scene__contact").getBoundingClientRect().left;
+        this.aboutLeftX = aboutLeftX;
+        this.projectsLeftX = projectsLeftX;
+        this.contactLeftX = contactLeftX;
         this.particles = [];
         this.dialogueCount = 0;
         this.tourAcepted = false;
     }
 
     update() {
+        
         this.player.update(this.input.keys);
 
         // handle particles
@@ -97,5 +103,4 @@ export class App {
             this.navigationPosition();
         });
     }
-    
 }

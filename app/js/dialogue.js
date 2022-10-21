@@ -1,3 +1,10 @@
+// DOM SELECTOR
+const dialogue = document.getElementById('dialogue');
+const dialogueText = document.getElementById('dialogueText');
+const dialogueButton = document.getElementById('dialogueButton');
+const language = document.getElementById('language');
+
+
 export const getDialogue = async (section = "home") => {
     let flagSelected = document.getElementsByClassName("language__icon display-none");
 

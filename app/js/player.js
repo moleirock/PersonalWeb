@@ -1,5 +1,10 @@
 import { RunningRight, RunningLeft, JumpingRight, JumpingLeft, StandingRight, StandingLeft } from "./playerStates.js";
 import { getDialogue } from "./dialogue.js";
+
+// DOM SELECTOR
+const playerImage = document.getElementById('playerImage');
+const endScreen = document.querySelector(".scene__contact").getBoundingClientRect().left;
+const dialogue = document.getElementById('dialogue');
 export class Player {
     constructor(app) {
         this.image = playerImage;
@@ -15,7 +20,7 @@ export class Player {
         this.maxFrame = 17;
         this.speed = 0;
         this.maxSpeed = 0;
-        this.endScreen = document.querySelector(".scene__contact").getBoundingClientRect().left;
+        this.endScreen = endScreen;
         // state manangemnt
         this.states = [
             new RunningRight(this),
