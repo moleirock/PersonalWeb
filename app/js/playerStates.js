@@ -22,8 +22,8 @@ export class RunningRight extends State {
     enter() {
         this.player.frameY = states.RUNNING_RIGHT;
         this.player.maxFrame = 41;
-        this.player.fps = 60;
-        this.player.maxSpeed = -10;
+        this.player.fps = 100;
+        this.player.maxSpeed = -25;
         toggleTheme.style.transform = "translate(6rem)";
         navigationControl.style.transform = "translate(-100%)";
     }
@@ -45,8 +45,8 @@ export class RunningLeft extends State {
     enter() {
         this.player.frameY = states.RUNNING_LEFT;
         this.player.maxFrame = 41;
-        this.player.fps = 60;
-        this.player.maxSpeed = 10;
+        this.player.fps = 100;
+        this.player.maxSpeed = 25;
         navigationControl.style.transform = "unset";
         toggleTheme.style.transform = "unset";
     }
@@ -67,7 +67,7 @@ export class JumpingRight extends State {
     enter() {
         this.player.frameY = states.JUMPING_RIGHT;
         this.player.maxFrame = 24;
-        this.player.fps = 60;
+        this.player.fps = 100;
         if (this.player.onGround()) this.player.velocitY -= 20;
     }
     handleInput(input) {
@@ -85,7 +85,7 @@ export class JumpingLeft extends State {
     enter() {
         this.player.frameY = states.JUMPING_LEFT;
         this.player.maxFrame = 24;
-        this.player.fps = 60;
+        this.player.fps = 100;
         if (this.player.onGround()) this.player.velocitY -= 20;
     }
     handleInput(input) {

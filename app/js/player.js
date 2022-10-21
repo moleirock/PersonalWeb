@@ -2,9 +2,10 @@ import { RunningRight, RunningLeft, JumpingRight, JumpingLeft, StandingRight, St
 import { getDialogue } from "./dialogue.js";
 
 // DOM SELECTOR
-const playerImage = document.getElementById('playerImage');
+const playerImage = document.getElementById("playerImage");
 const endScreen = document.querySelector(".scene__contact").getBoundingClientRect().left;
-const dialogue = document.getElementById('dialogue');
+const dialogue = document.getElementById("dialogue");
+const sections = document.getElementById("sections");
 export class Player {
     constructor(app) {
         this.image = playerImage;
@@ -14,7 +15,7 @@ export class Player {
         this.x = this.app.width * 0.35 - this.width * 0.5;
         this.y = this.app.height - this.height;
         this.velocitY = 0;
-        this.gravity = 0.5;
+        this.gravity = 0.6;
         this.frameX = 0;
         this.frameY = 4;
         this.maxFrame = 17;
@@ -45,28 +46,28 @@ export class Player {
 
         // Dialogue Stops
         if (!dialogue.classList.contains("display-none")) this.maxSpeed = 0;
-
-        // Horizontal movement
-        this.speed += this.maxSpeed;
-
-        if (this.speed > 0) this.speed = 0;
-        else if (this.speed < -this.endScreen) this.speed = -this.endScreen;
-        sections.style.transform = `translate(${this.speed}px)`;
-
-        // Vertical movement
-        this.y += this.velocitY;
-        if (!this.onGround()) this.velocitY += this.gravity;
-        else {
-            this.velocitY = 0;
-            this.y = this.app.height - this.height;
-        }
     }
     draw(context, deltatime) {
-        // Animation frames
+        // Animation frames, this conditions are for equality in movements in all devices
         if (this.frameX >= this.maxFrame) this.frameX = 0;
         if (this.frameTimer >= this.frameInterval) {
             this.frameX++;
             this.frameTimer = 0;
+
+            // Horizontal movement
+            this.speed += this.maxSpeed;
+
+            if (this.speed > 0) this.speed = 0;
+            else if (this.speed < -this.endScreen) this.speed = -this.endScreen;
+            sections.style.transform = `translate(${this.speed}px)`;
+
+            // Vertical movement
+            this.y += this.velocitY;
+            if (!this.onGround()) this.velocitY += this.gravity;
+            else {
+                this.velocitY = 0;
+                this.y = this.app.height - this.height;
+            }
         }
         this.frameTimer += deltatime;
 
