@@ -6,6 +6,8 @@ const playerImage = document.getElementById("playerImage");
 const endScreen = document.querySelector(".scene__contact").getBoundingClientRect().left;
 const dialogue = document.getElementById("dialogue");
 const sections = document.getElementById("sections");
+const navigationControls = document.getElementById("navigationControls");
+
 export class Player {
     constructor(app) {
         this.image = playerImage;
@@ -93,12 +95,10 @@ export class Player {
         this.currentState.enter();
     }
     screenPosition(about, projects, contact, dialogueCount, input) {
-        function blockedControl() {
-            getDialogue("controlsBlocked");
-        }
+        
 
         if (dialogueCount > 3) {
-            navigationControls.removeEventListener("click", blockedControl);
+            navigationControls.classList.remove("display-none");
             buttonHome.addEventListener("click", (e) => {
                 input.push("ArrowUp");
                 sections.style.transition = "transform 0.5s ease-in-out 0s";
@@ -136,7 +136,7 @@ export class Player {
                 }, 500);
             });
         } else {
-            navigationControls.addEventListener("click", blockedControl);
+            navigationControls.classList.add("display-none");
         }
     }
 }

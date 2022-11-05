@@ -73,19 +73,6 @@ img {
     }
 }
 
-/* UTILITIES */
-.text-color-secondary {
-    color: var(--secondary-color);
-}
-.font-size-60 {
-    font-size: 6rem;
-}
-.font-size-16 {
-    font-size: 1.6rem;
-}
-.display-none {
-    display: none;
-}
 /* Loading page */
 .loading {
     position: absolute;
@@ -397,4 +384,18 @@ section[class^="scene__"] {
 }
 .dialogue__box--width90 {
     width: 90%;
+}
+
+/* UTILITIES */
+.text-color-secondary {
+    color: var(--secondary-color);
+}
+.font-size-60 {
+    font-size: 6rem;
+}
+.font-size-16 {
+    font-size: 1.6rem;
+}
+.display-none {
+    display: none;
 }

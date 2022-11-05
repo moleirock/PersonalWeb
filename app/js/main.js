@@ -5,33 +5,36 @@ import { swapLanguage } from "./language.js";
 window.addEventListener("load", () => {
     document.getElementById("loading").style.display = "none";
 
-    // CANVAS SETTINGS
+    // CANVAS SETTINGS----------------------------------------------------
     const canvas = document.getElementById("canvasPlayer");
     const ctx = canvas.getContext("2d");
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
     let lastTime = 0;
 
-    // CANAVAS COLLISION SETTINGS
+    // CANVAS COLLISION SETTINGS------------------------------------------
     const canvasCollision = document.getElementById("canvasCollision");
     const ctxCollision = canvasCollision.getContext("2d");
     canvasCollision.width = window.innerWidth;
     canvasCollision.height = window.innerHeight;
 
-    // RESIZE RELOAD
+    // RESIZE RELOAD------------------------------------------------------
     // window.addEventListener("resize", () => {
     //     window.location.reload();
     // });
 
-    // THEME AND LANGUAGE
+    // THEME AND LANGUAGE-------------------------------------------------
     swapTheme();
     swapLanguage();
 
-    // MAIN APP - ANIMATION - DIALOGUE
+    // MAIN APP ----------------------------------------------------------
     const app = new App(canvas.width, canvas.height);
 
+    // DIALOGUE
     app.dialoguePlayer(ctxCollision);
     app.askTour();
+
+    // ANIMATION
     function animate(timeStamp) {
         ctx.clearRect(0, 0, canvas.width, canvas.height);
         ctxCollision.clearRect(0, 0, canvasCollision.width, canvasCollision.height);
