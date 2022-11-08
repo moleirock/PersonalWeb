@@ -66,7 +66,7 @@ export class App {
             } else if (-this.player.speed >= this.contactLeftX && this.dialogueCount < 4) {
                 getDialogue("contact");
                 ++this.dialogueCount;
-                this.navigationPosition();
+                this.player.navigationPosition(this.dialogueCount);
                 this.tourAcepted = false;
             }
         }
@@ -81,9 +81,7 @@ export class App {
             }
         });
     }
-    navigationPosition() {
-        this.player.navigationPosition(this.dialogueCount);
-    }
+    
     askTour() {
         dialogueButtonReject.classList.remove("display-none");
         dialogueButton.innerText = "Yes";
@@ -93,14 +91,14 @@ export class App {
             dialogueButtonReject.classList.add("display-none");
             dialogueButton.innerText = "Skip";
             this.dialogueCount = 4;
-            this.navigationPosition();
+            this.player.navigationPosition(this.dialogueCount);
         });
         dialogueButton.addEventListener("click", () => {
             dialogue.classList.add("display-none");
             dialogueButtonReject.classList.add("display-none");
             dialogueButton.innerText = "Skip";
             this.tourAcepted = true;
-            this.navigationPosition();
+            this.player.navigationPosition(this.dialogueCount);
         });
     }
 
