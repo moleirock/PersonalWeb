@@ -22,7 +22,6 @@ export class App {
     }
 
     update() {
-        
         this.player.update(this.input.keys);
 
         // handle particles
@@ -58,12 +57,15 @@ export class App {
                 getDialogue("home");
                 ++this.dialogueCount;
             } else if (-this.player.speed >= this.aboutLeftX && this.dialogueCount < 2) {
+                this.player.speed = -this.aboutLeftX;
                 getDialogue("about");
                 ++this.dialogueCount;
             } else if (-this.player.speed >= this.projectsLeftX && this.dialogueCount < 3) {
+                this.player.speed = -this.projectsLeftX;
                 getDialogue("projects");
                 ++this.dialogueCount;
             } else if (-this.player.speed >= this.contactLeftX && this.dialogueCount < 4) {
+                this.player.speed = -this.contactLeftX;
                 getDialogue("contact");
                 ++this.dialogueCount;
                 this.player.navigationPosition(this.dialogueCount);
@@ -81,7 +83,7 @@ export class App {
             }
         });
     }
-    
+
     askTour() {
         dialogueButtonReject.classList.remove("display-none");
         dialogueButton.innerText = "Yes";
@@ -101,6 +103,4 @@ export class App {
             this.player.navigationPosition(this.dialogueCount);
         });
     }
-
-    
 }
