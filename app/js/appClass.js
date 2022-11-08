@@ -52,7 +52,7 @@ export class App {
         );
         context.fill();
     }
-    dialogue() {
+    dialogueTour() {
         if (this.tourAcepted) {
             if (this.player.speed === 0 && this.dialogueCount < 1) {
                 getDialogue("home");
