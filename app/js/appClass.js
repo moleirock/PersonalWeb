@@ -82,7 +82,7 @@ export class App {
         });
     }
     navigationPosition() {
-        this.player.screenPosition(this.aboutLeftX, this.projectsLeftX, this.contactLeftX, this.dialogueCount, this.input.keys);
+        this.player.navigationPosition(this.dialogueCount);
     }
     askTour() {
         dialogueButtonReject.classList.remove("display-none");
@@ -103,4 +103,6 @@ export class App {
             this.navigationPosition();
         });
     }
+
+    
 }

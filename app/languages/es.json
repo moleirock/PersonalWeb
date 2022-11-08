@@ -5,6 +5,9 @@
     "about": {
         "title": "<span class=\"text-color-secondary\">Sobre </span>Mí"
     },
+    "projects":{
+        "title": "Pro<span class=\"text-color-secondary\">yectos</span>"
+    },
     "dialogue": {
         "tour": ["¿Quieres una visita guiada?"],
         "controlsBlocked": ["No se puden usar los controles hasta terminar la visita guiada."],
