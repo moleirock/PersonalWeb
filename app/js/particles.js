@@ -7,7 +7,7 @@ export class Dust {
         this.y = y;
         this.speedX = Math.random();
         this.speedY = Math.random();
-        this.color = "rgba(0,0,0,0.2)";
+        this.color = "rgba(100,100,100,0.2)";
         this.direction = direction;
     }
     update() {

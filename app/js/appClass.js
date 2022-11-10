@@ -57,16 +57,16 @@ export class App {
                 getDialogue("home");
                 ++this.dialogueCount;
             } else if (-this.player.speed >= this.aboutLeftX && this.dialogueCount < 2) {
-                this.player.speed = -this.aboutLeftX;
                 getDialogue("about");
+                this.player.speed = -this.aboutLeftX;
                 ++this.dialogueCount;
             } else if (-this.player.speed >= this.projectsLeftX && this.dialogueCount < 3) {
-                this.player.speed = -this.projectsLeftX;
                 getDialogue("projects");
+                this.player.speed = -this.projectsLeftX;
                 ++this.dialogueCount;
             } else if (-this.player.speed >= this.contactLeftX && this.dialogueCount < 4) {
-                this.player.speed = -this.contactLeftX;
                 getDialogue("contact");
+                this.player.speed = -this.contactLeftX;
                 ++this.dialogueCount;
                 this.player.navigationPosition(this.dialogueCount);
                 this.tourAcepted = false;
