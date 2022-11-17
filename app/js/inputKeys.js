@@ -81,9 +81,7 @@ export class InputHandler {
             }
         });
         window.addEventListener("touchend", (e) => {
-            this.keys.splice(this.keys.indexOf("ArrowUp"), 1);
-            this.keys.splice(this.keys.indexOf("ArrowLeft"), 1);
-            this.keys.splice(this.keys.indexOf("ArrowRight"), 1);
+            this.keys=[];
         });
     }
 }
