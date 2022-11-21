@@ -73,8 +73,8 @@
         </nav>
         <main class="main-content">
             <div id="sections">
-                <div class="scene">
-                    <section class="scene__home">
+                <div class="scene" >
+                    <section class="scene__home" data-name="home">
                         <h1 data-section="home" data-element="title" class="home__title">
                             Who is <br /><span class="text-color-secondary font-size-60">Alberto Moleiro</span>?
                         </h1>
@@ -85,7 +85,7 @@
                             </picture>
                         </div>
                     </section>
-                    <section class="scene__about">
+                    <section class="scene__about" data-name="about">
                         <h2 data-section="about" data-element="title" class="about__title title">
                             <span class="text-color-secondary">About </span>Me
                         </h2>
@@ -109,7 +109,7 @@
                             </article>
                         </div>
                     </section>
-                    <section class="scene__projects">
+                    <section class="scene__projects" data-name="projects">
                         <h2 data-section="projects" data-element="title" class="projects__title title">
                             Pro<span class="text-color-secondary">jects</span>
                         </h2>
@@ -131,7 +131,7 @@
                             </div>
                         </div>
                     </section>
-                    <section class="scene__contact">
+                    <section class="scene__contact" data-name="contact">
                         <h1>Who is <span class="text-color-secondary">Alberto Moleiro</span>?</h1>
                     </section>
                 </div>
@@ -153,8 +153,9 @@
             <div id="dialogue" class="dialogue__overlay">
                 <div class="dialogue__box">
                     <p id="dialogueText" class="dialogue__text"></p>
-                    <button id="dialogueButton" class="dialogue__button">Skip</button>
-                    <button id="dialogueButtonReject" class="dialogue__button dialogue__button--red display-none">No</button>
+                    <button id="dialogueButton" class="dialogue__button display-none">Skip</button>
+                    <button id="dialogueButtonAccept" class="dialogue__button">Yes</button>
+                    <button id="dialogueButtonReject" class="dialogue__button dialogue__button--red">No</button>
                     <div class="dialogue__triangle"></div>
                 </div>
             </div>

@@ -44,7 +44,7 @@ window.addEventListener("load", () => {
         app.update();
         app.draw(ctx, deltatime);
         app.drawCollision(ctxCollision);
-        app.dialogueTour();
+        /* app.dialogueTour(); */
         requestAnimationFrame(animate);
     }
 

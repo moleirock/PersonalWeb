@@ -6,6 +6,7 @@ import { getDialogue } from "../Functions/dialogue.js";
 const aboutLeftX = document.querySelector(".scene__about").getBoundingClientRect().left;
 const projectsLeftX = document.querySelector(".scene__projects").getBoundingClientRect().left;
 const contactLeftX = document.querySelector(".scene__contact").getBoundingClientRect().left;
+const sections = document.querySelectorAll("section[class^='scene__']");
 
 export class App {
     constructor(width, height) {
@@ -16,9 +17,8 @@ export class App {
         this.aboutLeftX = aboutLeftX;
         this.projectsLeftX = projectsLeftX;
         this.contactLeftX = contactLeftX;
+        this.sections=sections;
         this.particles = [];
-        this.dialogueCount = 0;
-        this.tourAcepted = false;
     }
 
     update() {
@@ -51,26 +51,29 @@ export class App {
         );
         context.fill();
     }
+
     dialogueTour() {
-        if (this.tourAcepted) {
-            if (this.player.speed === 0 && this.dialogueCount < 1) {
-                getDialogue("home");
-                ++this.dialogueCount;
-            } else if (-this.player.speed >= this.aboutLeftX && this.dialogueCount < 2) {
-                this.player.speed = -this.aboutLeftX;
-                getDialogue("about");
-                ++this.dialogueCount;
-            } else if (-this.player.speed >= this.projectsLeftX && this.dialogueCount < 3) {
-                this.player.speed = -this.projectsLeftX;
-                getDialogue("projects");
-                ++this.dialogueCount;
-            } else if (-this.player.speed >= this.contactLeftX && this.dialogueCount < 4) {
-                getDialogue("contact");
-                ++this.dialogueCount;
-                this.player.navigationPosition(this.dialogueCount);
-                this.tourAcepted = false;
+        
+        
+
+        const observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        
+                        getDialogue(entry.target.dataset.name);
+                        observer.unobserve(entry.target);
+                    }
+                });
+            },
+            {
+                threshold: .99,
             }
-        }
+        );
+
+        this.sections.forEach((section) => {
+            observer.observe(section);
+        });
     }
     dialoguePlayer(context) {
         window.addEventListener("click", (e) => {
@@ -84,22 +87,21 @@ export class App {
     }
 
     askTour() {
-        dialogueButtonReject.classList.remove("display-none");
-        dialogueButton.innerText = "Yes";
         getDialogue("tour");
+
         dialogueButtonReject.addEventListener("click", () => {
             dialogue.classList.add("display-none");
             dialogueButtonReject.classList.add("display-none");
-            dialogueButton.innerText = "Skip";
-            this.dialogueCount = 4;
-            this.player.navigationPosition(this.dialogueCount);
+            this.player.navigationPosition();
         });
-        dialogueButton.addEventListener("click", () => {
+
+        dialogueButtonAccept.addEventListener("click", () => {
             dialogue.classList.add("display-none");
             dialogueButtonReject.classList.add("display-none");
-            dialogueButton.innerText = "Skip";
-            this.tourAcepted = true;
-            this.player.navigationPosition(this.dialogueCount);
+            dialogueButtonAccept.classList.add("display-none");
+            dialogueButton.classList.remove("display-none");
+            this.player.navigationPosition();
+            this.dialogueTour();
         });
     }
 }

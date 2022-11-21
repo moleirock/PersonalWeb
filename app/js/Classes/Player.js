@@ -93,9 +93,7 @@ export class Player {
         this.currentState = this.states[state];
         this.currentState.enter();
     }
-    navigationPosition(dialogueCount) {
-        if (dialogueCount > 3) {
-            navigationControls.classList.remove("display-none");
+    navigationPosition() {          
             buttonHome.addEventListener("click", (e) => {
                 this.app.input.keys.push("ArrowUp");
                 sections.style.transition = "transform 0.5s ease-in-out 0s";
@@ -132,8 +130,6 @@ export class Player {
                     this.app.input.keys.splice(this.app.input.keys.indexOf("ArrowUp"), 1);
                 }, 500);
             });
-        } else {
-            navigationControls.classList.add("display-none");
-        }
+        
     }
 }
