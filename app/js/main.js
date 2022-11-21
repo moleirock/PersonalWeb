@@ -1,6 +1,6 @@
-import { App } from "./appClass.js";
-import { swapTheme } from "./toggleTheme.js";
-import { swapLanguage } from "./language.js";
+import { App } from "./Classes/App.js";
+import { swapTheme } from "./Functions/toggleTheme.js";
+import { swapLanguage } from "./Functions/toggleLanguage.js";
 
 window.addEventListener("load", () => {
     document.getElementById("loading").style.display = "none";
@@ -23,7 +23,7 @@ window.addEventListener("load", () => {
     //     window.location.reload();
     // });
 
-    // THEME AND LANGUAGE-------------------------------------------------
+    // CONTROL FUNCTIONS OF THEME AND LANGUAGE-------------------------------------------------
     swapTheme();
     swapLanguage();
 

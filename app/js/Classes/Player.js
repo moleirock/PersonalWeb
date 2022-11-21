@@ -1,5 +1,4 @@
-import { RunningRight, RunningLeft, JumpingRight, JumpingLeft, StandingRight, StandingLeft } from "./playerStates.js";
-import { getDialogue } from "./dialogue.js";
+import { RunningRight, RunningLeft, JumpingRight, JumpingLeft, StandingRight, StandingLeft } from "./PlayerStates.js";
 
 // DOM SELECTOR
 const playerImage = document.getElementById("playerImage");

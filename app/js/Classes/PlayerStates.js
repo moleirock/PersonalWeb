@@ -1,4 +1,4 @@
-import { Dust } from "./particles.js";
+import { Dust } from "./Particles.js";
 
 const states = {
     RUNNING_RIGHT: 0,
@@ -28,7 +28,7 @@ export class RunningRight extends State {
         navigationControl.style.transform = "translate(-100%)";
     }
     handleInput(input) {
-        this.player.app.particles.push(new Dust(this.player.app, this.player.x + this.player.width * 0.5, this.player.app.height ,1));
+        this.player.app.particles.push(new Dust(this.player.app, this.player.x + this.player.width * 0.5, this.player.app.height, 1));
 
         if (input.includes("ArrowLeft")) {
             input.splice(input.indexOf("ArrowRight"), 1);
@@ -51,7 +51,7 @@ export class RunningLeft extends State {
         toggleTheme.style.transform = "unset";
     }
     handleInput(input) {
-        this.player.app.particles.push(new Dust(this.player.app, this.player.x + this.player.width * 0.5, this.player.app.height,-1));
+        this.player.app.particles.push(new Dust(this.player.app, this.player.x + this.player.width * 0.5, this.player.app.height, -1));
         if (input.includes("ArrowRight")) {
             input.splice(input.indexOf("ArrowLeft"), 1);
             this.player.setState(states.RUNNING_RIGHT);

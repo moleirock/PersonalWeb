@@ -1,6 +1,6 @@
-import { Player } from "./player.js";
-import { InputHandler } from "./inputKeys.js";
-import { getDialogue } from "./dialogue.js";
+import { Player } from "./Player.js";
+import { InputHandler } from "./InputKeys.js";
+import { getDialogue } from "../Functions/dialogue.js";
 
 // DOM SELECTOR
 const aboutLeftX = document.querySelector(".scene__about").getBoundingClientRect().left;
