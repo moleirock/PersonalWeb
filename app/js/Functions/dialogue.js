@@ -1,19 +1,23 @@
 // DOM SELECTOR
-const dialogue = document.getElementById('dialogue');
-const dialogueText = document.getElementById('dialogueText');
-const dialogueButton = document.getElementById('dialogueButton');
-const language = document.getElementById('language');
-
+const dialogue = document.getElementById("dialogue");
+const dialogueText = document.getElementById("dialogueText");
+const dialogueButton = document.getElementById("dialogueButton");
+const language = document.getElementById("language");
 
 export const getDialogue = async (section = "home") => {
     let flagSelected = document.getElementsByClassName("language__icon display-none");
-
     const requestJson = await fetch(`languages/${flagSelected[0].dataset.language}.json`);
     const texts = await requestJson.json();
 
     speechBox(texts.dialogue[section]);
-    language.addEventListener("click", () => {
-        if (!dialogue.classList.contains("display-none")) getDialogue(section);
+
+    language.addEventListener("click", async () => {
+        if (!dialogue.classList.contains("display-none")) {
+            const requestJson = await fetch(`languages/${flagSelected[0].dataset.language}.json`);
+            const texts = await requestJson.json();
+            dialogue.classList.add("display-none");
+            speechBox(texts.dialogue[section]);
+        }
     });
 };
 
