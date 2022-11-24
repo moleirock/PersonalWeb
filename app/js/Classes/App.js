@@ -54,20 +54,19 @@ export class App {
 
     dialogueTour() {
         
-        
-
         const observer = new IntersectionObserver(
             (entries) => {
                 entries.forEach((entry) => {
-                    if (entry.isIntersecting) {
-                        
+                    if (entry.isIntersecting) {                       
+                        this.player.maxSpeed=0;
+                        this.player.speed=-entry.target.offsetLeft;                       
                         getDialogue(entry.target.dataset.name);
                         observer.unobserve(entry.target);
                     }
                 });
             },
-            {
-                threshold: .99,
+            {   
+                threshold: .95,
             }
         );
 
