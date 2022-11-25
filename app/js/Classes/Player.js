@@ -6,6 +6,10 @@ const endScreen = document.querySelector(".scene__contact").getBoundingClientRec
 const dialogue = document.getElementById("dialogue");
 const sections = document.getElementById("sections");
 const navigationControls = document.getElementById("navigationControls");
+const buttonHome = document.getElementById("buttonHome");
+const buttonAbout = document.getElementById("buttonAbout");
+const buttonProjects = document.getElementById("buttonProjects");
+const buttonContact = document.getElementById("buttonContact");
 
 export class Player {
     constructor(app) {
@@ -39,6 +43,13 @@ export class Player {
         this.fps = 10;
         this.frameTimer = 0;
         this.frameInterval = 1000 / this.fps;
+
+        //Buttons
+        this.buttonHome=buttonHome;
+        this.buttonAbout=buttonAbout;
+        this.buttonProjects=buttonProjects;
+        this.buttonContact=buttonContact;
+        this.navigationControls=navigationControls;
     }
     update(input) {
         this.frameInterval = 1000 / this.fps;
@@ -94,7 +105,7 @@ export class Player {
         this.currentState.enter();
     }
     navigationPosition() {          
-            buttonHome.addEventListener("click", (e) => {
+            this.buttonHome.addEventListener("click", (e) => {
                 this.app.input.keys.push("ArrowUp");
                 sections.style.transition = "transform 0.5s ease-in-out 0s";
                 this.speed = 0;
@@ -103,7 +114,7 @@ export class Player {
                     this.app.input.keys.splice(this.app.input.keys.indexOf("ArrowUp"), 1);
                 }, 500);
             });
-            buttonAbout.addEventListener("click", (e) => {
+            this.buttonAbout.addEventListener("click", (e) => {
                 this.app.input.keys.push("ArrowUp");
                 sections.style.transition = "transform 0.5s ease-in-out 0s";
                 this.speed = -this.app.aboutLeftX;
@@ -112,7 +123,7 @@ export class Player {
                     this.app.input.keys.splice(this.app.input.keys.indexOf("ArrowUp"), 1);
                 }, 500);
             });
-            buttonProjects.addEventListener("click", (e) => {
+            this.buttonProjects.addEventListener("click", (e) => {
                 this.app.input.keys.push("ArrowUp");
                 sections.style.transition = "transform 0.5s ease-in-out 0s";
                 this.speed = -this.app.projectsLeftX;
@@ -121,7 +132,7 @@ export class Player {
                     this.app.input.keys.splice(this.app.input.keys.indexOf("ArrowUp"), 1);
                 }, 500);
             });
-            buttonContact.addEventListener("click", (e) => {
+            this.buttonContact.addEventListener("click", (e) => {
                 this.app.input.keys.push("ArrowUp");
                 sections.style.transition = "transform 0.5s ease-in-out 0s";
                 this.speed = -this.app.contactLeftX;

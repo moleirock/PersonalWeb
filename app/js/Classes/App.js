@@ -17,7 +17,7 @@ export class App {
         this.aboutLeftX = aboutLeftX;
         this.projectsLeftX = projectsLeftX;
         this.contactLeftX = contactLeftX;
-        this.sections=sections;
+        this.sections = sections;
         this.particles = [];
     }
 
@@ -53,20 +53,33 @@ export class App {
     }
 
     dialogueTour() {
-        
+        this.player.navigationControls.classList.add("navigation-forbbiden");
+        this.player.buttonHome.classList.add("zIndexNegative");
+        this.player.buttonAbout.classList.add("zIndexNegative");
+        this.player.buttonProjects.classList.add("zIndexNegative");
+        this.player.buttonContact.classList.add("zIndexNegative");
+
         const observer = new IntersectionObserver(
             (entries) => {
                 entries.forEach((entry) => {
-                    if (entry.isIntersecting) {                       
-                        this.player.maxSpeed=0;
-                        this.player.speed=-entry.target.offsetLeft;                       
+                    if (entry.isIntersecting) {
+                        this.player.maxSpeed = 0;
+                        this.player.speed = -entry.target.offsetLeft;
                         getDialogue(entry.target.dataset.name);
+
+                        if (entry.target.offsetLeft >= this.contactLeftX) {
+                            this.player.navigationControls.classList.remove("navigation-forbbiden");
+                            this.player.buttonHome.classList.remove("zIndexNegative");
+                            this.player.buttonAbout.classList.remove("zIndexNegative");
+                            this.player.buttonProjects.classList.remove("zIndexNegative");
+                            this.player.buttonContact.classList.remove("zIndexNegative");
+                        }
                         observer.unobserve(entry.target);
                     }
                 });
             },
-            {   
-                threshold: .95,
+            {
+                threshold: 0.95,
             }
         );
 
