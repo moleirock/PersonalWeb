@@ -26,6 +26,7 @@ export class Player {
         this.maxFrame = 17;
         this.speed = 0;
         this.maxSpeed = 0;
+        this.runningSpeed = this.app.width/96;
         this.endScreen = endScreen;
         // state manangemnt
         this.states = [
