@@ -53,7 +53,7 @@ export class App {
     }
 
     dialogueTour() {
-        this.player.navigationControls.classList.add("navigation-forbbiden");
+        this.player.navigationControls.classList.add("navigation-forbidden");
         this.player.buttonHome.classList.add("zIndexNegative");
         this.player.buttonAbout.classList.add("zIndexNegative");
         this.player.buttonProjects.classList.add("zIndexNegative");
@@ -68,7 +68,7 @@ export class App {
                         getDialogue(entry.target.dataset.name);
 
                         if (entry.target.offsetLeft >= this.contactLeftX) {
-                            this.player.navigationControls.classList.remove("navigation-forbbiden");
+                            this.player.navigationControls.classList.remove("navigation-forbidden");
                             this.player.buttonHome.classList.remove("zIndexNegative");
                             this.player.buttonAbout.classList.remove("zIndexNegative");
                             this.player.buttonProjects.classList.remove("zIndexNegative");
