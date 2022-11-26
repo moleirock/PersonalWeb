@@ -22,7 +22,7 @@ export class RunningRight extends State {
     enter() {
         this.player.frameY = states.RUNNING_RIGHT;
         this.player.maxFrame = 41;
-        this.player.fps = 100;
+        this.player.fps = 60;
         this.player.maxSpeed = -20;
         toggleTheme.style.transform = "translate(6rem)";
         navigationControl.style.transform = "translate(-100%)";
@@ -45,7 +45,7 @@ export class RunningLeft extends State {
     enter() {
         this.player.frameY = states.RUNNING_LEFT;
         this.player.maxFrame = 41;
-        this.player.fps = 100;
+        this.player.fps = 60;
         this.player.maxSpeed = 20;
         navigationControl.style.transform = "unset";
         toggleTheme.style.transform = "unset";

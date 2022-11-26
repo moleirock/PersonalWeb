@@ -2,7 +2,7 @@
     --primary-font: "Roboto", sans-serif;
     --comic-font: "Comic Neue", cursive;
 
-    --bg-color: #171727;
+    --bg-color: #001220;
     --bg-color-controls: #5b748b;
 
     --primary-color: #171727;
@@ -308,8 +308,9 @@ section[class^="scene__"] {
     left: 0;
     max-width: 100%;
     height: 100vh;
+    z-index: -1;
 }
-#playerImage {
+#playerImage,#layer1 {
     display: none;
 }
 

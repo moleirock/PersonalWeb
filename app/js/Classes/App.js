@@ -1,6 +1,7 @@
 import { Player } from "./Player.js";
 import { InputHandler } from "./InputKeys.js";
 import { getDialogue } from "../Functions/dialogue.js";
+import { Background } from "./background.js";
 
 // DOM SELECTOR
 const aboutLeftX = document.querySelector(".scene__about").getBoundingClientRect().left;
@@ -14,6 +15,7 @@ export class App {
         this.height = height;
         this.player = new Player(this);
         this.input = new InputHandler();
+        this.background = new Background(this);
         this.aboutLeftX = aboutLeftX;
         this.projectsLeftX = projectsLeftX;
         this.contactLeftX = contactLeftX;
@@ -22,7 +24,9 @@ export class App {
     }
 
     update() {
+        this.background.update();
         this.player.update(this.input.keys);
+        
 
         // handle particles
         this.particles.forEach((particle, index) => {
@@ -31,6 +35,7 @@ export class App {
         });
     }
     draw(context, deltatime) {
+        this.background.draw(context);
         this.player.draw(context, deltatime);
 
         // drawing particles
@@ -53,6 +58,7 @@ export class App {
     }
 
     dialogueTour() {
+        //Refactor class buttons
         this.player.navigationControls.classList.add("navigation-forbidden");
         this.player.buttonHome.classList.add("zIndexNegative");
         this.player.buttonAbout.classList.add("zIndexNegative");
