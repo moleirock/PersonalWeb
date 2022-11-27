@@ -3,6 +3,7 @@
     --comic-font: "Comic Neue", cursive;
 
     --bg-color: #001220;
+    --bg-color-opacity-50: #00122080;
     --bg-color-controls: #5b748b;
 
     --primary-color: #171727;
@@ -43,6 +44,7 @@ body {
 }
 body.light {
     --bg-color: #d1b9b9;
+    --bg-color-opacity-50: #d1b9b980;
     --bg-color-controls: #9c7c7c;
     --text-color: #443737;
 }
@@ -244,6 +246,10 @@ section[class^="scene__"] {
 }
 .about__text {
     width: 50%;
+    background-color: var(--bg-color-opacity-50);
+    backdrop-filter: blur(3px);
+    border-radius: 2rem;
+    padding: .5rem 0;
 }
 @media (max-width: 768px) {
     .about__title {

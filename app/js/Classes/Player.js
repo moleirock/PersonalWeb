@@ -75,6 +75,7 @@ export class Player {
             sections.style.transform = `translate(${this.speed}px)`;
 
             // Vertical movement
+            if(this.velocitY<-20) this.velocitY = -20;
             this.y += this.velocitY;
             if (!this.onGround()) this.velocitY += this.gravity;
             else {
