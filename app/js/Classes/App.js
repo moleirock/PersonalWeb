@@ -1,7 +1,7 @@
 import { Player } from "./Player.js";
 import { InputHandler } from "./InputKeys.js";
 import { getDialogue } from "../Functions/dialogue.js";
-import { Background } from "./background.js";
+import { Background } from "./Background.js";
 
 // DOM SELECTOR
 const aboutLeftX = document.querySelector(".scene__about").getBoundingClientRect().left;
@@ -35,7 +35,6 @@ export class App {
         });
     }
     draw(context, deltatime) {
-        this.background.draw(context);
         this.player.draw(context, deltatime);
 
         // drawing particles
@@ -55,6 +54,9 @@ export class App {
             Math.PI * 2
         );
         context.fill();
+    }
+    drawBackground(context){
+        this.background.draw(context);
     }
 
     dialogueTour() {
@@ -110,6 +112,8 @@ export class App {
         dialogueButtonReject.addEventListener("click", () => {
             dialogue.classList.add("display-none");
             dialogueButtonReject.classList.add("display-none");
+            dialogueButtonAccept.classList.add("display-none");
+            dialogueButton.classList.remove("display-none");
             this.player.navigationPosition();
         });
 

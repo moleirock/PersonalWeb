@@ -306,9 +306,17 @@ section[class^="scene__"] {
     opacity: 0;
     top: 0;
     left: 0;
-    max-width: 100%;
+    max-width: 100vw;
     height: 100vh;
     z-index: -1;
+}
+#canvasBackground{
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    max-width: 100vw;
+    height: 100vh;
 }
 #playerImage,#layer1 {
     display: none;

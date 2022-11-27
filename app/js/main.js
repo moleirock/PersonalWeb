@@ -5,7 +5,7 @@ import { swapLanguage } from "./Functions/toggleLanguage.js";
 window.addEventListener("load", () => {
     document.getElementById("loading").style.display = "none";
 
-    // CANVAS SETTINGS----------------------------------------------------
+    // CANVAS PLAYER SETTINGS----------------------------------------------------
     const canvas = document.getElementById("canvasPlayer");
     const ctx = canvas.getContext("2d");
     canvas.width = window.innerWidth;
@@ -17,6 +17,12 @@ window.addEventListener("load", () => {
     const ctxCollision = canvasCollision.getContext("2d");
     canvasCollision.width = window.innerWidth;
     canvasCollision.height = window.innerHeight;
+
+    // CANVAS BACKGROUND SETTINGS
+    const canvasBackground = document.getElementById("canvasBackground");
+    const ctxBackground = canvasBackground.getContext("2d");
+    canvasBackground.width = window.innerWidth;
+    canvasBackground.height = window.innerHeight;
 
     // RESIZE RELOAD------------------------------------------------------
     // window.addEventListener("resize", () => {
@@ -38,12 +44,14 @@ window.addEventListener("load", () => {
     function animate(timeStamp) {
         ctx.clearRect(0, 0, canvas.width, canvas.height);
         ctxCollision.clearRect(0, 0, canvasCollision.width, canvasCollision.height);
+        ctxBackground.clearRect(0, 0, canvasBackground.width, canvasBackground.height);
         const deltatime = timeStamp - lastTime;
         lastTime = timeStamp;
 
         app.update();
         app.draw(ctx, deltatime);
         app.drawCollision(ctxCollision);
+        app.drawBackground(ctxBackground);
         requestAnimationFrame(animate);
     }
 
