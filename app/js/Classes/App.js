@@ -18,7 +18,7 @@ export class App {
         this.background = new Background(this);
         this.aboutLeftX = aboutLeftX;
         this.projectsLeftX = projectsLeftX;
-        this.contactLeftX = contactLeftX;
+        this.contactLeftX = contactLeftX - 5;//number 5 es a margin for good performance on mobile browsers
         this.sections = sections;
         this.particles = [];
     }
@@ -26,7 +26,6 @@ export class App {
     update() {
         this.background.update();
         this.player.update(this.input.keys);
-        
 
         // handle particles
         this.particles.forEach((particle, index) => {
@@ -55,7 +54,7 @@ export class App {
         );
         context.fill();
     }
-    drawBackground(context){
+    drawBackground(context) {
         this.background.draw(context);
     }
 

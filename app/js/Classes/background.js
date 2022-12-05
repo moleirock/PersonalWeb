@@ -21,7 +21,7 @@ class Layer {
                 this.x += this.app.player.maxSpeed * this.speedModifier - this.speedDefault;
             }
         } else if (this.speedDefault != 0) {
-            this.x += -this.speedDefault;
+            this.x -= this.speedDefault;
         }
     }
     draw(context) {

@@ -16,7 +16,7 @@
             "Well, I will tell you... He IS THE WORST HUMAN in the world!!",
             "Sure you're wondering why I hate him.",
             "But first, you must know how to move.",
-            "<picture><source srcset='assets/img/controlsBig.png' type='image/png' media='(min-width:1000px)' /><img src='assets/img/controls.png' alt='control keys' /></picture>"
+            "<picture><source srcset='assets/img/controls.png' type='image/png' media='(min-width:1000px)' /><img src='assets/img/controls.png' alt='control keys' /></picture>"
         ],
         "about": [
             "Wow! Who drew it? I mean... he's ugly enough without those drawings.",

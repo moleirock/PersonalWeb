@@ -40,7 +40,8 @@ body {
     line-height: 1.4;
     background-color: var(--bg-color);
     color: var(--text-color);
-    max-height: 100vh;
+    height: 100vh;
+    height: calc(var(--vh,1vh)*100);
 }
 body.light {
     --bg-color: #d1b9b9;
@@ -83,7 +84,7 @@ img {
     z-index: 10;
     background-color: var(--primary-color);
     width: 100vw;
-    height: 100vh;
+    height: 100%;
     display: grid;
     place-items: center;
 }
@@ -138,7 +139,7 @@ img {
     position: fixed;
     display: flex;
     align-items: center;
-    height: 100vh;
+    height: 100%;
     z-index: 2;
     transition: transform 0.5s ease-in-out 0s;
 }
@@ -209,22 +210,15 @@ img {
     display: flex;
     width: 100%;
     height: 100vh;
+    height: calc(var(--vh,1vh)*100);
 }
 section[class^="scene__"] {
     min-width: 100%;
-}
-.home__image {
-    max-width: 70%;
-    margin: 5rem auto;
 }
 
 @media (max-width: 768px) {
     .home__title {
         width: 80%;
-    }
-    .home__image {
-        margin: unsetd;
-        margin-left: 6.5rem;
     }
 }
 @media (max-width: 480px) {
@@ -305,7 +299,7 @@ section[class^="scene__"] {
     top: 0;
     left: 0;
     max-width: 100vw;
-    height: 100vh;
+    height:100%;
 }
 #canvasCollision {
     position: absolute;
@@ -313,7 +307,7 @@ section[class^="scene__"] {
     top: 0;
     left: 0;
     max-width: 100vw;
-    height: 100vh;
+    height: 100%;
     z-index: -1;
 }
 #canvasBackground{
@@ -322,7 +316,7 @@ section[class^="scene__"] {
     top: 0;
     left: 0;
     max-width: 100vw;
-    height: 100vh;
+    height: 100%;
 }
 #playerImage,#layer1 {
     display: none;

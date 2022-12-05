@@ -14,7 +14,7 @@ window.addEventListener("load", () => {
 
     // CANVAS COLLISION SETTINGS------------------------------------------
     const canvasCollision = document.getElementById("canvasCollision");
-    const ctxCollision = canvasCollision.getContext("2d");
+    const ctxCollision = canvasCollision.getContext("2d", { willReadFrequently: true });
     canvasCollision.width = window.innerWidth;
     canvasCollision.height = window.innerHeight;
 
@@ -25,9 +25,13 @@ window.addEventListener("load", () => {
     canvasBackground.height = window.innerHeight;
 
     // RESIZE RELOAD------------------------------------------------------
-    // window.addEventListener("resize", () => {
-    //     window.location.reload();
-    // });
+    /* window.addEventListener("resize", () => {
+        window.location.reload();
+    }); */
+
+    // VIEWPORT MOBILE UNITS
+    let vh = window.innerHeight * 0.01;
+    document.documentElement.style.setProperty("--vh", `${vh}px`);
 
     // CONTROL FUNCTIONS OF THEME AND LANGUAGE-------------------------------------------------
     swapTheme();
