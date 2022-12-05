@@ -68,6 +68,10 @@ img {
     width: 100%;
     height: auto;
 }
+.icon{
+    width: 3.2rem;
+    height: 3.2rem;
+}
 
 .title {
     font-weight: 900;
