@@ -23,6 +23,7 @@
 </head>
 
 <body>
+    <!-- CONTROLS -->
     <button id="toggleTheme" class="button-control button-control--theme">
         <svg id="sun" xmlns="http://www.w3.org/2000/svg" height="40" width="40">
             <path
@@ -67,6 +68,10 @@
             </button>
         </div>
     </nav>
+    <div id="mobileJoystick">
+        <div id="mobileJoystickCentre"></div>
+    </div>
+    <!-- CONTENT -->
     <main class="main-content">
         <div id="sections">
             <div class="scene">
@@ -160,6 +165,7 @@
         <canvas id="canvasPlayer"></canvas>
         <canvas id="canvasCollision"></canvas>
         <canvas id="canvasBackground"></canvas>
+        <!-- DIALOGUES -->
         <div id="dialogue" class="dialogue__overlay">
             <div class="dialogue__box">
                 <p id="dialogueText" class="dialogue__text"></p>
@@ -172,7 +178,7 @@
             </div>
         </div>
     </main>
-
+    <!-- PREVIEWS  -->
     <div id="loading" class="loading">
         <p>Loading...</p>
     </div>

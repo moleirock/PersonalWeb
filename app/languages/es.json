@@ -15,7 +15,8 @@
             "De verdad quieres saber quien es Alberto?",
             "Bien, te lo diré... Él es EL PEOR HUMANO del mundo!!",
             "Seguro que te preguntas porque le odio.",
-            "Pero primero, debes aprender a moverte."
+            "Pero primero, debes aprender a moverte.",
+            "<picture><img class='control__img' src='assets/img/controls.png' alt='control keys'/></picture>"
         ],
         "about": [
             "¡Vaya! ¿quién habrá dibujado eso? ",

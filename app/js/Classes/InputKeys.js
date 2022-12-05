@@ -1,6 +1,7 @@
 // DOM SELECTOR
 const dialogue = document.getElementById('dialogue');
-
+const mobileJoystick = document.getElementById('mobileJoystick');
+const mobileJoystickCentre = document.getElementById('mobileJoystickCentre');
 
 
 export class InputHandler {
@@ -8,7 +9,7 @@ export class InputHandler {
         this.keys = [];
         this.touchX = "";
         this.touchY = "";
-        this.sensibility = 30;
+        this.sensibility = 25;
         window.addEventListener("keydown", (e) => {
             if (dialogue.classList.contains("display-none"))
                 switch (e.key) {
@@ -59,28 +60,34 @@ export class InputHandler {
             }
         });
 
-        window.addEventListener("touchstart", (e) => {
+        mobileJoystick.addEventListener("touchstart", (e) => {
             this.touchX = e.changedTouches[0].pageX;
             this.touchY = e.changedTouches[0].pageY;
+            
         });
-        window.addEventListener("touchmove", (e) => {
+        mobileJoystick.addEventListener("touchmove", (e) => {
             const swipeDistanceX = e.changedTouches[0].pageX - this.touchX;
             const swipeDistanceY = e.changedTouches[0].pageY - this.touchY;
+                     
             if (dialogue.classList.contains("display-none")) {
                 if (swipeDistanceY < -this.sensibility && this.keys.indexOf("ArrowUp") == -1) {
-                    this.keys.splice(this.keys.indexOf("ArrowUp"), 1);
+                    mobileJoystickCentre.style.top= "30%";
                     this.keys.push("ArrowUp");
                 }
                 if (swipeDistanceX > this.sensibility && this.keys.indexOf("ArrowRight") === -1) {
+                    mobileJoystickCentre.style.left="70%";
                     this.keys.splice(this.keys.indexOf("ArrowLeft"), 1);
                     this.keys.push("ArrowRight");
                 } else if (swipeDistanceX < -this.sensibility && this.keys.indexOf("ArrowLeftt") === -1) {
+                    mobileJoystickCentre.style.left="30%";
                     this.keys.splice(this.keys.indexOf("ArrowRight"), 1);
                     this.keys.push("ArrowLeft");
                 }
             }
         });
-        window.addEventListener("touchend", (e) => {
+        mobileJoystick.addEventListener("touchend", (e) => {
+            mobileJoystickCentre.style.top= "50%";
+            mobileJoystickCentre.style.left= "50%";
             this.keys=[];
         });
     }

@@ -17,12 +17,16 @@
     --green-color-dark: rgb(17, 87, 0);
     --red-color-med: rgb(156, 0, 0);
     --red-color-dark: rgb(87, 0, 0);
-    --shadow: rgb(41, 65, 48);
+    --grey-opacity-50: rgba(83, 83, 83, 0.363);
+    --softGrey-opacity-50: rgba(182, 182, 182, 0.452);
+    
 }
 html {
     box-sizing: border-box;
     font-size: 62.5%;
     overflow: hidden;
+    max-width: 1920px;
+    max-height: 1080px;
 }
 
 *,
@@ -83,7 +87,7 @@ img {
     left: 0;
     z-index: 10;
     background-color: var(--primary-color);
-    width: 100vw;
+    width: 100%;
     height: 100%;
     display: grid;
     place-items: center;
@@ -204,6 +208,32 @@ img {
 .language__icon:hover {
     transform: scale(1.1);
 }
+@media (max-width: 768px){
+    #mobileJoystick{
+        border: solid 4px var(--softGrey-opacity-50);
+        background-color:var(--grey-opacity-50);
+        bottom: 2rem;
+        right: 2rem;
+        width: 10rem;
+        height: 10rem;
+        border-radius: 50%;
+        z-index: 4;
+        position: absolute;
+    }
+    #mobileJoystickCentre{
+        background-color: var(--grey-opacity-50);
+        border: solid 2px var(--softGrey-opacity-50);
+        width: 4rem;
+        height: 4rem;
+        border-radius: 50%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+
+    }
+}
+
 
 /* HOME */
 .scene {
@@ -298,7 +328,7 @@ section[class^="scene__"] {
     z-index: 1;
     top: 0;
     left: 0;
-    max-width: 100vw;
+    max-width: 100%;
     height:100%;
 }
 #canvasCollision {
@@ -306,7 +336,7 @@ section[class^="scene__"] {
     opacity: 0;
     top: 0;
     left: 0;
-    max-width: 100vw;
+    max-width: 100%;
     height: 100%;
     z-index: -1;
 }
@@ -315,7 +345,7 @@ section[class^="scene__"] {
     z-index: -1;
     top: 0;
     left: 0;
-    max-width: 100vw;
+    max-width: 100%;
     height: 100%;
 }
 #playerImage,#layer1 {
@@ -409,6 +439,9 @@ section[class^="scene__"] {
 }
 .dialogue__box--width90 {
     width: 90%;
+}
+.control__img{
+max-width: 30rem;
 }
 
 /* UTILITIES */
