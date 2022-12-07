@@ -18,12 +18,13 @@ export class RunningRight extends State {
     constructor(player) {
         super("RUNNING_RIGHT");
         this.player = player;
+        this.runningSpeed = 16;
     }
     enter() {
         this.player.frameY = states.RUNNING_RIGHT;
         this.player.maxFrame = 41;
-        this.player.fps = 60;
-        this.player.maxSpeed = -this.player.runningSpeed;
+        this.player.fps = 64;
+        this.player.maxSpeed = -this.runningSpeed;
         toggleTheme.style.transform = "translate(6rem)";
         navigationControl.style.transform = "translate(-100%)";
     }
@@ -41,12 +42,13 @@ export class RunningLeft extends State {
     constructor(player) {
         super("RUNNING_LEFT");
         this.player = player;
+        this.runningSpeed = 16;
     }
     enter() {
         this.player.frameY = states.RUNNING_LEFT;
         this.player.maxFrame = 41;
-        this.player.fps = 60;
-        this.player.maxSpeed = this.player.runningSpeed;
+        this.player.fps = 64;
+        this.player.maxSpeed = this.runningSpeed;
         navigationControl.style.transform = "unset";
         toggleTheme.style.transform = "unset";
     }
@@ -67,7 +69,7 @@ export class JumpingRight extends State {
     enter() {
         this.player.frameY = states.JUMPING_RIGHT;
         this.player.maxFrame = 24;
-        this.player.fps = 60;
+        this.player.fps = 64;
         if (this.player.onGround()) this.player.velocitY -= 20;
     }
     handleInput(input) {
@@ -85,7 +87,7 @@ export class JumpingLeft extends State {
     enter() {
         this.player.frameY = states.JUMPING_LEFT;
         this.player.maxFrame = 24;
-        this.player.fps = 60;
+        this.player.fps = 64;
         if (this.player.onGround()) this.player.velocitY -= 20;
     }
     handleInput(input) {
@@ -105,7 +107,7 @@ export class StandingRight extends State {
         this.player.maxSpeed = 0;
         this.player.frameY = states.STANDING_RIGHT;
         this.player.maxFrame = 17;
-        this.player.fps = 10;
+        this.player.fps = 8;
     }
     handleInput(input) {
         if (input.includes("ArrowLeft")) this.player.setState(states.RUNNING_LEFT);
@@ -121,7 +123,7 @@ export class StandingLeft extends State {
     enter() {
         this.player.frameY = states.STANDING_LEFT;
         this.player.maxFrame = 17;
-        this.player.fps = 10;
+        this.player.fps = 8;
         this.player.maxSpeed = 0;
     }
     handleInput(input) {

@@ -6,7 +6,6 @@
     --bg-color-opacity-50: #00122080;
     --bg-color-controls: #5b748b;
 
-    --primary-color: #171727;
     --text-color: #dbdbdb;
 
     --secondary-color: #ae2754;
@@ -17,6 +16,7 @@
     --green-color-dark: rgb(17, 87, 0);
     --red-color-med: rgb(156, 0, 0);
     --red-color-dark: rgb(87, 0, 0);
+    --grey-color: rgb(54, 54, 54);
     --grey-opacity-50: rgba(83, 83, 83, 0.363);
     --softGrey-opacity-50: rgba(182, 182, 182, 0.452);
     
@@ -56,7 +56,6 @@ body.light {
 h1 {
     font-size: 4.8rem;
     padding: 2rem 0 0 7rem;
-    /* margin: 0; */
 }
 h2 {
     font-size: 6rem;
@@ -187,6 +186,7 @@ img {
     cursor: pointer;
     z-index: 2;
     border: none;
+    box-shadow: -3px -1px 5px var(--grey-color) inset;
 }
 
 .button-control--theme {
