@@ -1,3 +1,4 @@
+import { updateLanguage } from "./dialogue.js";
 // DOM SELECTOR
 const language = document.getElementById('language');
 const flagEs = document.getElementById('flagEs');
@@ -9,10 +10,10 @@ export function swapLanguage() {
     language.addEventListener("click", (e) => {
         flagEs.classList.toggle('display-none');
         flagGb.classList.toggle('display-none');
+        updateLanguage();
         changeLanguage(e.target.dataset.language);
     });
 }
-
 
 const changeLanguage = async (language) => {
     const requestJson = await fetch(`languages/${language}.json`);

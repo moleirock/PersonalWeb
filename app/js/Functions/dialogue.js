@@ -2,32 +2,35 @@
 const dialogue = document.getElementById("dialogue");
 const dialogueText = document.getElementById("dialogueText");
 const dialogueButton = document.getElementById("dialogueButton");
-const language = document.getElementById("language");
 
-export const getDialogue = async (section = "home") => {
-    let flagSelected = document.getElementsByClassName("language__icon display-none");
+// VARIABLES DECLARATIONS
+let texts = {};
+let flagSelected = document.getElementsByClassName("language__icon display-none");
+let currentMessageIndex = 0;
+let section = "";
+
+const updateDialogue = async () => {
     const requestJson = await fetch(`languages/${flagSelected[0].dataset.language}.json`);
-    const texts = await requestJson.json();
-
-    speechBox(texts.dialogue[section]);
-
-    language.addEventListener("click", async () => {
-        if (!dialogue.classList.contains("display-none")) {
-            const requestJson = await fetch(`languages/${flagSelected[0].dataset.language}.json`);
-            const texts = await requestJson.json();
-            dialogue.classList.add("display-none");
-            speechBox(texts.dialogue[section]);
-        }
-    });
-};
-
-const speechBox = (text = ["Nothing to say"], i = 0) => {
-    dialogueText.innerHTML = text[i];
+    texts = await requestJson.json();
+    dialogueText.innerHTML = texts.dialogue[section][currentMessageIndex];
     dialogue.classList.remove("display-none");
-    dialogueButton.addEventListener("click", () => {
-        dialogue.classList.add("display-none");
-        if (text.length - 1 > i) {
-            speechBox(text, ++i);
-        }
-    });
 };
+export const updateLanguage = () =>{
+    if(!dialogue.classList.contains("display-none")) updateDialogue();
+}
+
+export const getDialogue = (sectionInput = "home") => {
+    section = sectionInput;
+    updateDialogue();
+};
+
+dialogueButton.addEventListener("click", () => {
+    ++currentMessageIndex;
+    if (currentMessageIndex < texts.dialogue[section].length) {
+        updateDialogue();
+    } else {
+        dialogue.classList.add("display-none");
+        currentMessageIndex = 0;
+    }
+});
+

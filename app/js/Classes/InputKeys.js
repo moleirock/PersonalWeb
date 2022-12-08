@@ -9,7 +9,7 @@ export class InputHandler {
         this.keys = [];
         this.touchX = "";
         this.touchY = "";
-        this.sensibility = 25;
+        this.sensibility = 20;
         window.addEventListener("keydown", (e) => {
             if (dialogue.classList.contains("display-none"))
                 switch (e.key) {

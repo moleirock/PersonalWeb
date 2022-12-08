@@ -25,7 +25,7 @@
 <body>
     <!-- CONTROLS -->
     <button id="toggleTheme" class="button-control button-control--theme">
-        <img id="sun" src="assets/icons/sunIcon.svg" alt="sun icon" class="icon" >
+        <img id="sun" src="assets/icons/sunIcon.svg" alt="sun icon" class="icon">
         <img id="moon" src="assets/icons/moonIcon.svg" alt="moon icon" class="icon display-none">
     </button>
     <div id="language" class="language">
@@ -86,23 +86,59 @@
                     <h2 data-section="projects" data-element="title" class="projects__title title">
                         Pro<span class="text-color-secondary">jects</span>
                     </h2>
-                    <div class="projects__machine">
-                        <div class="machine__buttons">
-                            <button class="machine__button">Html5</button>
-                            <button class="machine__button">CSS3</button>
-                            <button class="machine__button">JavaScript</button>
-                            <button class="machine__button">NodeJs</button>
-                            <button class="machine__button">Sass</button>
-                            <button class="machine__button">Gulp.js</button>
-                            <button class="machine__button">Php</button>
-                            <button class="machine__button">MySQL</button>
-                        </div>
-                        <div class="machine__exhibitor">
-                            <button class="exhibitor__left">&lt;</button>
-                            <div class="projectCard"><img src="" alt="" class="projectCard__img">
-                                <h3 class="projectCard__title">Proyecto muy chulo</h3>
-                            </div>
-                            <button class="exhibitor__right">&gt;</button>
+                    <div class="projects__content" id="projectContent">
+                        <ul class="filter__list">
+                            <li class="filter__item">Html5</li>
+                            <li class="filter__item">CSS3</li>
+                            <li class="filter__item">JavaScript</li>
+                            <li class="filter__item">MySQL</li>
+                            <li class="filter__item">PHP8</li>
+                            <li class="filter__item">SASS</li>
+                            <li class="filter__item">Gulp.js</li>
+                            <li class="filter__item">SCSS</li>
+                        </ul>
+                        <ul class="projects__list">
+                            <li class="project__item"><img
+                                    src="https://images.unsplash.com/photo-1661956602153-23384936a1d3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80"
+                                    alt=""> </li>
+                            <li class="project__item"><img
+                                    src="https://images.unsplash.com/photo-1661961110372-8a7682543120?ixlib=rb-4.0.3&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
+                                    alt=""> </li>
+                            <li class="project__item"><img
+                                    src="https://images.unsplash.com/photo-1661961111247-e218f67d1cd2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2072&q=80"
+                                    alt=""> </li>
+                            <li class="project__item"><img
+                                    src="https://images.unsplash.com/photo-1661956602153-23384936a1d3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80"
+                                    alt=""> </li>
+                            <li class="project__item"><img
+                                    src="https://images.unsplash.com/photo-1661961110372-8a7682543120?ixlib=rb-4.0.3&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
+                                    alt=""> </li>
+                            <li class="project__item"><img
+                                    src="https://images.unsplash.com/photo-1661961111247-e218f67d1cd2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2072&q=80"
+                                    alt=""> </li>
+                            <li class="project__item"><img
+                                    src="https://images.unsplash.com/photo-1661956602153-23384936a1d3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80"
+                                    alt=""> </li>
+                            <li class="project__item"><img
+                                    src="https://images.unsplash.com/photo-1661961110372-8a7682543120?ixlib=rb-4.0.3&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
+                                    alt=""> </li>
+                            <li class="project__item"><img
+                                    src="https://images.unsplash.com/photo-1661961111247-e218f67d1cd2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2072&q=80"
+                                    alt=""> </li>
+                            <li class="project__item"><img
+                                    src="https://images.unsplash.com/photo-1661956602153-23384936a1d3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80"
+                                    alt=""> </li>
+                            <li class="project__item"><img
+                                    src="https://images.unsplash.com/photo-1661961110372-8a7682543120?ixlib=rb-4.0.3&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
+                                    alt=""> </li>
+                            <li class="project__item"><img
+                                    src="https://images.unsplash.com/photo-1661961111247-e218f67d1cd2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2072&q=80"
+                                    alt=""> </li>
+
+                        </ul>
+                        <div class="projects__controls">
+                            <button class="button-control" id="projectsScrollUp"><img class="icon" src="assets/icons/arrowUpIcon.svg" alt="arrow up icon"></button>
+                            <button class="button-control" id="projectsScrollDown"><img class="icon" src="assets/icons/arrowDownIcon.svg" alt="arrow up icon"></button>
                         </div>
                     </div>
                 </section>

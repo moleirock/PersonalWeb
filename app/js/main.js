@@ -33,6 +33,13 @@ window.addEventListener("load", () => {
     let vh = window.innerHeight * 0.01;
     document.documentElement.style.setProperty("--vh", `${vh}px`);
 
+    // PROJECTS BUTTONS
+/*     const projectScrollDown = document.getElementById("projectsScrollDown");
+    const projectContent = document.getElementById("projectContent");
+    projectScrollDown.addEventListener("click",()=>{
+        projectContent.scroll(0,projectContent.scrollTop+50);
+    }) */
+
     // CONTROL FUNCTIONS OF THEME AND LANGUAGE-------------------------------------------------
     swapTheme();
     swapLanguage();
