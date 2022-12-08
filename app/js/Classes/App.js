@@ -18,7 +18,7 @@ export class App {
         this.background = new Background(this);
         this.aboutLeftX = aboutLeftX;
         this.projectsLeftX = projectsLeftX;
-        this.contactLeftX = contactLeftX - 5;//number 5 es a margin for good performance on mobile browsers
+        this.contactLeftX = contactLeftX - 5; //number 5 es a margin for good performance on mobile browsers
         this.sections = sections;
         this.particles = [];
     }
@@ -59,12 +59,15 @@ export class App {
     }
 
     dialogueTour() {
+        const toggleShowingControls = () => {
+            this.player.navigationControls.classList.toggle("navigation-forbidden");
+            this.player.buttonHome.classList.toggle("zIndexNegative");
+            this.player.buttonAbout.classList.toggle("zIndexNegative");
+            this.player.buttonProjects.classList.toggle("zIndexNegative");
+            this.player.buttonContact.classList.toggle("zIndexNegative");
+        };
         //Refactor class buttons
-        this.player.navigationControls.classList.add("navigation-forbidden");
-        this.player.buttonHome.classList.add("zIndexNegative");
-        this.player.buttonAbout.classList.add("zIndexNegative");
-        this.player.buttonProjects.classList.add("zIndexNegative");
-        this.player.buttonContact.classList.add("zIndexNegative");
+        toggleShowingControls();
 
         const observer = new IntersectionObserver(
             (entries) => {
@@ -75,11 +78,7 @@ export class App {
                         getDialogue(entry.target.dataset.name);
 
                         if (entry.target.offsetLeft >= this.contactLeftX) {
-                            this.player.navigationControls.classList.remove("navigation-forbidden");
-                            this.player.buttonHome.classList.remove("zIndexNegative");
-                            this.player.buttonAbout.classList.remove("zIndexNegative");
-                            this.player.buttonProjects.classList.remove("zIndexNegative");
-                            this.player.buttonContact.classList.remove("zIndexNegative");
+                            toggleShowingControls();
                         }
                         observer.unobserve(entry.target);
                     }

@@ -64,7 +64,7 @@ export class InputHandler {
             this.touchX = e.changedTouches[0].pageX;
             this.touchY = e.changedTouches[0].pageY;
             
-        });
+        },{passive: true});
         mobileJoystick.addEventListener("touchmove", (e) => {
             const swipeDistanceX = e.changedTouches[0].pageX - this.touchX;
             const swipeDistanceY = e.changedTouches[0].pageY - this.touchY;
@@ -84,7 +84,7 @@ export class InputHandler {
                     this.keys.push("ArrowLeft");
                 }
             }
-        });
+        },{passive: true});
         mobileJoystick.addEventListener("touchend", (e) => {
             mobileJoystickCentre.style.top= "50%";
             mobileJoystickCentre.style.left= "50%";
