@@ -45,11 +45,11 @@ export class Player {
         this.frameInterval = 1000 / this.fps;
 
         //Buttons
-        this.buttonHome=buttonHome;
-        this.buttonAbout=buttonAbout;
-        this.buttonProjects=buttonProjects;
-        this.buttonContact=buttonContact;
-        this.navigationControls=navigationControls;
+        this.buttonHome = buttonHome;
+        this.buttonAbout = buttonAbout;
+        this.buttonProjects = buttonProjects;
+        this.buttonContact = buttonContact;
+        this.navigationControls = navigationControls;
     }
     update(input) {
         this.frameInterval = 1000 / this.fps;
@@ -74,7 +74,7 @@ export class Player {
             sections.style.transform = `translate(${this.speed}px)`;
 
             // Vertical movement
-            if(this.velocitY<-20) this.velocitY = -20;
+            if (this.velocitY < -20) this.velocitY = -20;
             this.y += this.velocitY;
             if (!this.onGround()) this.velocitY += this.gravity;
             else {
@@ -105,43 +105,28 @@ export class Player {
         this.currentState = this.states[state];
         this.currentState.enter();
     }
-    navigationPosition() {          
-            this.buttonHome.addEventListener("click", (e) => {
-                this.app.input.keys.push("ArrowUp");
-                sections.style.transition = "transform 0.5s ease-in-out 0s";
-                this.speed = 0;
-                setTimeout(() => {
-                    sections.style.transition = "unset";
-                    this.app.input.keys.splice(this.app.input.keys.indexOf("ArrowUp"), 1);
-                }, 500);
-            });
-            this.buttonAbout.addEventListener("click", (e) => {
-                this.app.input.keys.push("ArrowUp");
-                sections.style.transition = "transform 0.5s ease-in-out 0s";
-                this.speed = -this.app.aboutLeftX;
-                setTimeout(() => {
-                    sections.style.transition = "unset";
-                    this.app.input.keys.splice(this.app.input.keys.indexOf("ArrowUp"), 1);
-                }, 500);
-            });
-            this.buttonProjects.addEventListener("click", (e) => {
-                this.app.input.keys.push("ArrowUp");
-                sections.style.transition = "transform 0.5s ease-in-out 0s";
-                this.speed = -this.app.projectsLeftX;
-                setTimeout(() => {
-                    sections.style.transition = "unset";
-                    this.app.input.keys.splice(this.app.input.keys.indexOf("ArrowUp"), 1);
-                }, 500);
-            });
-            this.buttonContact.addEventListener("click", (e) => {
-                this.app.input.keys.push("ArrowUp");
-                sections.style.transition = "transform 0.5s ease-in-out 0s";
-                this.speed = -this.app.contactLeftX;
-                setTimeout(() => {
-                    sections.style.transition = "unset";
-                    this.app.input.keys.splice(this.app.input.keys.indexOf("ArrowUp"), 1);
-                }, 500);
-            });
-        
+    navigationPosition() {
+        const navigate = (position) => {
+            this.app.input.keys.push("ArrowUp");
+            sections.style.transition = "transform 0.5s ease-in-out 0s";
+            this.speed = -position;
+            setTimeout(() => {
+                sections.style.transition = "unset";
+                this.app.input.keys.splice(this.app.input.keys.indexOf("ArrowUp"), 1);
+            }, 500);
+        };
+
+        this.buttonHome.addEventListener("click", (e) => {
+            navigate(0);
+        });
+        this.buttonAbout.addEventListener("click", (e) => {
+            navigate(this.app.aboutLeftX);
+        });
+        this.buttonProjects.addEventListener("click", (e) => {
+            navigate(this.app.projectsLeftX);
+        });
+        this.buttonContact.addEventListener("click", (e) => {
+            navigate(this.app.contactLeftX);
+        });
     }
 }

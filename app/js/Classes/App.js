@@ -9,6 +9,9 @@ const projectsLeftX = document.querySelector(".scene__projects").getBoundingClie
 const contactLeftX = document.querySelector(".scene__contact").getBoundingClientRect().left;
 const sections = document.querySelectorAll("section[class^='scene__']");
 
+const dialogueButtonReject = document.getElementById("dialogueButtonReject");
+const dialogueButtonAccept = document.getElementById("dialogueButtonAccept");
+
 export class App {
     constructor(width, height) {
         this.width = width;
@@ -66,7 +69,7 @@ export class App {
             this.player.buttonProjects.classList.toggle("zIndexNegative");
             this.player.buttonContact.classList.toggle("zIndexNegative");
         };
-        //Refactor class buttons
+
         toggleShowingControls();
 
         const observer = new IntersectionObserver(
