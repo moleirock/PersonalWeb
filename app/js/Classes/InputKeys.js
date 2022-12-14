@@ -49,17 +49,8 @@ export class InputHandler {
                     break;
             }
         });
-        window.addEventListener("wheel", (e) => {
-            if (dialogue.classList.contains("display-none")) {
-                if (e.deltaY > 0) this.keys.push("ArrowRight");
-                else if (e.deltaY < 0) this.keys.push("ArrowLeft");
-                setTimeout(() => {
-                    this.keys.splice(this.keys.indexOf("ArrowRight"), 1);
-                    this.keys.splice(this.keys.indexOf("ArrowLeft"), 1);
-                }, 700);
-            }
-        });
-
+        
+        /* MOBILE */
         mobileJoystick.addEventListener("touchstart", (e) => {
             this.touchX = e.changedTouches[0].pageX;
             this.touchY = e.changedTouches[0].pageY;
