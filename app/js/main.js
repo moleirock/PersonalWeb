@@ -1,6 +1,7 @@
 import { App } from "./Classes/App.js";
 import { swapTheme } from "./Functions/toggleTheme.js";
 import { swapLanguage } from "./Functions/toggleLanguage.js";
+import { projectFilter } from "./Functions/projectFilter.js";
 
 window.addEventListener("load", () => {
     document.getElementById("loading").style.display = "none";
@@ -37,6 +38,8 @@ window.addEventListener("load", () => {
     // CONTROL FUNCTIONS OF THEME AND LANGUAGE-------------------------------------------------
     swapTheme();
     swapLanguage();
+    // PROJECT FILTER
+projectFilter();
 
     // MAIN APP ----------------------------------------------------------
     const app = new App(canvas.width, canvas.height);
