@@ -8,12 +8,12 @@ export function projectFilter(){
             console.log(filter);
             projects.forEach((project) => {
                 if (filter === "all") {
-                    project.style.display = "block";
+                    project.classList.remove("display-none");
                 } else {
                     if (project.dataset.technologies.includes(filter)) {
-                        project.style.display = "block";
+                      project.classList.remove("display-none");
                     } else {
-                        project.style.display = "none";
+                      project.classList.add("display-none");
                     }
                 }
             });
