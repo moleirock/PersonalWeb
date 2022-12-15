@@ -1,4 +1,4 @@
-const filterButtons = document.querySelectorAll(".filter-btn");
+const filterButtons = document.querySelectorAll(".filter-list__item");
 const projects = document.querySelectorAll(".project__item");
 
 export function projectFilter(){
