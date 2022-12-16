@@ -39,9 +39,9 @@ function projectVisibility(){
     const observer = new IntersectionObserver((entries) => {
         entries.forEach((entry) => {
             if (entry.isIntersecting) {
-                entry.target.classList.remove("darken");
+                entry.target.classList.remove("outView");
             } else {
-                entry.target.classList.add("darken");
+                entry.target.classList.add("outView");
 
             }
         });
