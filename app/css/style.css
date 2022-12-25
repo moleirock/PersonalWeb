@@ -71,8 +71,8 @@ li {
     list-style: none;
 }
 .icon {
-    width: 3.2rem;
-    height: 3.2rem;
+    width: 2.8rem;
+    height: 2.8rem;
 }
 
 .title {
@@ -80,9 +80,16 @@ li {
     text-align: center;
     padding-top: 1rem;
 }
+@media (max-width: 768px) {
+    .title {
+        font-size: 4.4rem;
+    }
+}
+    
 @media (max-width: 480px) {
     .title {
         padding: unset;
+        font-size: 4rem;
     }
 }
 /* ScrollBar */
@@ -288,7 +295,8 @@ section[class^="scene__"] {
     display: flex;
     align-items: center;
     justify-content: center;
-    text-align: center;
+    
+    
 }
 .about__image {
     width: unset;
@@ -298,31 +306,39 @@ section[class^="scene__"] {
     width: 50%;
     background-color: var(--bg-color-opacity-50);
     backdrop-filter: blur(3px);
-    border-radius: 2rem;
-    padding: 0.5rem 0;
+    border-radius: 1rem;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    overflow-x: scroll;
+    
 }
+
 @media (max-width: 768px) {
-    .about__title {
-        font-size: 4rem;
-        padding: unset;
-    }
     .about__image {
         width: 90%;
+
     }
     .about__text {
         width: 90%;
+
     }
     .about__content {
         flex-direction: column;
         justify-content: unset;
+        text-align: center;
     }
 }
 @media (max-width: 480px) {
-    .about__title {
-        font-size: 3.2rem;
+    .about__content{
+        height: 85%;   
     }
     .about__image {
         width: 70%;
+    }
+    .about__text p:last-child {
+        margin-bottom: 12rem;
     }
 }
 /* PROJECTS */
@@ -355,6 +371,7 @@ section[class^="scene__"] {
     border: var(--text-color) solid 2.5px;
     border-radius: 0.7rem;
     font-weight: bold;
+    background-color: var(--bg-color-opacity-50);
 }
 .filter-list__item:hover {
     border-color: var(--secondary-color);
@@ -382,9 +399,6 @@ section[class^="scene__"] {
     .projects-list {
         grid-template-columns: repeat(2, 1fr);
     }
-    .projects__title {
-        font-size: 4rem;
-    }
     .projects__content,
     #projectShadow-top,
     #projectShadow-bottom {
@@ -396,6 +410,8 @@ section[class^="scene__"] {
         grid-template-columns: 1fr;
     }
 }
+/* CONTACT */
+
 /* CANVAS */
 #canvasPlayer {
     position: absolute;
@@ -512,7 +528,7 @@ section[class^="scene__"] {
     height: 100%;
     z-index: 3;
     cursor: not-allowed;
-    background: radial-gradient(circle at 40% 100%, rgba(255, 0, 0, 0) 30%, var(--black-color-pure));
+    background: radial-gradient(circle at 40% 100%, rgba(255, 0, 0, 0) 30%, var(--bg-color));
 }
 .dialogue__box--width90 {
     width: 90%;
@@ -530,6 +546,9 @@ section[class^="scene__"] {
 }
 .font-size-16 {
     font-size: 1.6rem;
+}
+.font-weight-700 {
+    font-weight: 700;
 }
 .display-none {
     display: none;
