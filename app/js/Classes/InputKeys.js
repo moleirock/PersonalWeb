@@ -69,17 +69,18 @@ export class InputHandler {
                     mobileJoystickCentre.style.left="70%";
                     this.keys.splice(this.keys.indexOf("ArrowLeft"), 1);
                     this.keys.push("ArrowRight");
-                } else if (swipeDistanceX < -this.sensibility && this.keys.indexOf("ArrowLeftt") === -1) {
+                } else if (swipeDistanceX < -this.sensibility && this.keys.indexOf("ArrowLeft") === -1) {
                     mobileJoystickCentre.style.left="30%";
                     this.keys.splice(this.keys.indexOf("ArrowRight"), 1);
                     this.keys.push("ArrowLeft");
                 }
             }
         },{passive: true});
+
         mobileJoystick.addEventListener("touchend", (e) => {
             mobileJoystickCentre.style.top= "50%";
             mobileJoystickCentre.style.left= "50%";
-            this.keys=[];
+            this.keys=[];      
         });
     }
 }

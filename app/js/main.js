@@ -39,7 +39,7 @@ window.addEventListener("load", () => {
     swapTheme();
     swapLanguage();
     // PROJECT FILTER
-projectFilter();
+    projectFilter();
 
     // MAIN APP ----------------------------------------------------------
     const app = new App(canvas.width, canvas.height);

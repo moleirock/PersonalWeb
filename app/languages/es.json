@@ -4,10 +4,14 @@
     },
     "about": {
         "title": "<span class=\"text-color-secondary\">Sobre </span>Mí",
-        "description": "<p>¡Hola! Mi nombre es <span class=\"font-weight-700\">Alberto</span>, soy una mente inquieta que nació en Madrid hace 30 años.</p> <p>Mi experiencia en <span class=\"font-weight-700\">desarrollo web</span> durante los últimos casi 2 años me ha hecho darme cuenta de que, aunque hay muchas habilidades que podría enumerar, lo que debes saber de mí es que tengo facilidad para aprender y trabajar con nuevas tecnologías y lenguajes de programación.</p><p>Hay varias razones por las que decidí enfocarme en el <span class=\"font-weight-700\">desarrollo de aplicaciones</span>, pero lo que más me atrae es <span class=\"font-weight-700\">resolver problemas</span> a través del <span class=\"font-weight-700\">pensamiento lógico</span>. También me encanta mantenerme informado y ampliar mis conocimientos sobre los lenguajes de programación y desarrollo web más actuales.</p><p>Actualmente estoy terminando mis estudios, pero estoy <span class=\"font-weight-700\">interesado en trabajar en un proyecto que complemente mi formación como desarrollador.</span></p>"
+        "description": "<p>&#128075; ¡Hola! Mi nombre es <span class=\"font-weight-700\">Alberto</span>, soy una mente inquieta que nació en Madrid hace 30 años.</p><p> &#128516; Mi experiencia en <span class=\"font-weight-700\">desarrollo web</span> durante los últimos casi 2 años me ha hecho darme cuenta de que, aunque hay muchas habilidades que podría enumerar, lo que debes saber de mí es que tengo facilidad para aprender y trabajar con nuevas tecnologías y lenguajes de programación.</p><p>&#129504; Hay varias razones por las que decidí enfocarme en el <span class=\"font-weight-700\">desarrollo de aplicaciones</span>, pero lo que más me atrae es <span class=\"font-weight-700\">resolver problemas</span> a través del <span class=\"font-weight-700\">pensamiento lógico</span>. También me encanta mantenerme informado y ampliar mis conocimientos sobre los lenguajes de programación y desarrollo web más actuales.</p><p>&#128195; Actualmente estoy terminando mis estudios, pero estoy <span class=\"font-weight-700\">interesado en trabajar en un proyecto que complemente mi formación como desarrollador.</span></p>"
     },
     "projects": {
-        "title": "Pro<span class=\"text-color-secondary\">yectos</span>"
+        "title": "Pro<span class=\"text-color-secondary\">yectos</span>",
+        "filter": "Filtrar por:"
+    },
+    "contact": {
+        "title": "<span class=\"text-color-secondary\">Contacta</span>Me"
     },
     "dialogue": {
         "tour": ["¿Quieres una visita guiada?"],
