@@ -11,7 +11,14 @@
         "filter": "Filtrar por:"
     },
     "contact": {
-        "title": "<span class=\"text-color-secondary\">Contacta</span>Me"
+        "title": "<span class=\"text-color-secondary\">Contácta</span>Me",
+        "contactTitle":"Información de Contacto",
+        "contentText":"¡Actualmente estoy buscando realizar prácticas, no dudes en ponerte en contacto por alguno de estos medios, estaré encantado de escuchar cualquier oferta!",
+        "location":"Ubicación:",
+        "locationText":"Madrid, España",
+        "languages":"Idiomas:",
+        "languagesText":"Español, Inglés",
+        "locationTitle":"Ubicación"
     },
     "dialogue": {
         "tour": ["¿Quieres una visita guiada?"],

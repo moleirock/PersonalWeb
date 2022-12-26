@@ -81,7 +81,7 @@ export class JumpingRight extends State {
 }
 export class JumpingLeft extends State {
     constructor(player) {
-        super("JUMPING_LEFT");
+        super("JUMPING_RIGHT");
         this.player = player;
     }
     enter() {
@@ -92,7 +92,7 @@ export class JumpingLeft extends State {
     }
     handleInput(input) {
         if (input.includes("ArrowRight")) {
-            input.splice(input.indexOf("ArrowLeft"), 1);
+            input.splice(input.indexOf("ArrowRight"), 1);
             this.player.setState(states.JUMPING_RIGHT);
         } else if (this.player.onGround()) this.player.setState(states.STANDING_LEFT);
     }

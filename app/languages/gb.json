@@ -11,7 +11,14 @@
         "filter": "Filter by:"
     },
     "contact": {
-        "title": "<span class=\"text-color-secondary\">Contact </span>Me"
+        "title": "<span class=\"text-color-secondary\">Contact </span>Me",
+        "contactTitle":"Contact Information",
+        "contentText":"I am currently looking to do internships. Don't hesitate to contact me through any of these means, I would be happy to hear any offers!",
+        "location":"Location:",
+        "locationText":"Madrid, Spain",
+        "languages":"Languages:",
+        "languagesText":"Spanish, English",
+        "locationTitle":"Location Map"
     },
     "dialogue": {
         "tour": ["Do you want a guided tour?"],
