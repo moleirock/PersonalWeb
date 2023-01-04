@@ -2,6 +2,7 @@ import { App } from "./Classes/App.js";
 import { swapTheme } from "./Functions/toggleTheme.js";
 import { swapLanguage } from "./Functions/toggleLanguage.js";
 import { projectFilter } from "./Functions/projectFilter.js";
+import { handleNavigation } from "./Functions/handleTouchsNavigation.js";
 
 window.addEventListener("load", () => {
     document.getElementById("loading").style.display = "none";
@@ -34,15 +35,16 @@ window.addEventListener("load", () => {
     let vh = window.innerHeight * 0.01;
     document.documentElement.style.setProperty("--vh", `${vh}px`);
 
+    // MAIN APP ----------------------------------------------------------
+    const app = new App(canvas.width, canvas.height);
 
     // CONTROL FUNCTIONS OF THEME AND LANGUAGE-------------------------------------------------
     swapTheme();
     swapLanguage();
+    handleNavigation(app.player);
+    
     // PROJECT FILTER
     projectFilter();
-
-    // MAIN APP ----------------------------------------------------------
-    const app = new App(canvas.width, canvas.height);
 
     // DIALOGUE
     app.dialoguePlayer(ctxCollision);

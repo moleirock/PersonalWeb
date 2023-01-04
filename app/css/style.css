@@ -4,21 +4,20 @@
 
     --color-bg: #001220;
     --color-bg-opacity-50: #00122080;
-    --color-bg-controls: #ae2754;
-
+    
     --color-text: #dbdbdb;
 
     --color-secondary: #ae2754;
 
     --color-white-med: #dbdbdb;
-    --black-color-pure: #000000;
-    --green-color-med: rgb(31, 156, 0);
-    --green-color-dark: rgb(17, 87, 0);
-    --red-color-med: rgb(156, 0, 0);
-    --red-color-dark: rgb(87, 0, 0);
+    --color-black: #000000;
+    --color-green-med: rgb(31, 156, 0);
+    --color-green-dark: rgb(17, 87, 0);
+    --color-red-med: rgb(156, 0, 0);
+    --color-red-dark: rgb(87, 0, 0);
     --color-grey: rgb(54, 54, 54);
-    --grey-opacity-50: rgba(83, 83, 83, 0.363);
-    --softGrey-opacity-50: rgba(182, 182, 182, 0.452);
+    --color-grey-opacity-50: rgba(83, 83, 83, 0.363);
+    --color-softGrey-opacity-50: rgba(182, 182, 182, 0.452);
 }
 
 html {
@@ -133,18 +132,18 @@ p {
     font-weight: 700;
     text-transform: uppercase;
     color: var(--color-secondary);
-    text-shadow: -50px -15px 10px var(--black-color-pure);
+    text-shadow: -50px -15px 10px var(--color-black);
     animation: shadowMove 4s ease-in-out 0s infinite normal none;
 }
 @keyframes shadowMove {
     0% {
-        text-shadow: -50px -15px 10px var(--black-color-pure);
+        text-shadow: -50px -15px 10px var(--color-black);
     }
     50% {
-        text-shadow: 50px -15px 10px var(--black-color-pure);
+        text-shadow: 50px -15px 10px var(--color-black);
     }
     100% {
-        text-shadow: -50px -15px 10px var(--black-color-pure);
+        text-shadow: -50px -15px 10px var(--color-black);
     }
 }
 /* SHORT HEIGHT */
@@ -155,7 +154,7 @@ p {
     width: 100%;
     height: 100%;
     display: none;
-    background-color: var(--black-color-pure);
+    background-color: var(--color-black);
     justify-content: center;
     align-items: center;
     z-index: 5;
@@ -209,7 +208,7 @@ p {
 }
 
 .button-control {
-    background-color: var(--color-bg-controls);
+    background-color: var(--color-secondary);
     border-radius: 50% 50%;
     border: none;
     width: 4.5rem;
@@ -221,9 +220,11 @@ p {
     z-index: 2;
     transition: all 0.2s ease-in-out 0s;
 }
-.button-control:hover {
-    transform: translateY(-.5rem) scale(1.05);
-    box-shadow: 0 0.3rem 0rem var(--color-text);
+@media(hover:hover){
+    .button-control:hover {
+        transform: translateY(-.5rem) scale(1.05);
+        box-shadow: 0 0.3rem 0rem var(--color-text);
+    }
 }
 
 .button-control--theme {
@@ -231,7 +232,32 @@ p {
     top: 1rem;
     right: 1rem;
     z-index: 4;
+    transition: right 0.5s ease-in-out 0s, transform 0.2s ease-in-out 0s;
 }
+#dropMenu{
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 4;
+    width: 4.5rem;
+    height: 4.5rem;
+    border-radius: 50% 0 50% 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--color-secondary);
+    cursor: pointer;
+    transform: translate(100%,-100%);
+    transition:all 0.5s ease-in-out 0s;
+}
+@media(hover:hover){
+    #dropMenu:hover{
+        border-radius: 50%;
+        top: 1rem;
+        right: 1rem;
+    }
+}
+
 
 .language {
     position: absolute;
@@ -251,8 +277,8 @@ p {
 }
 @media (max-width: 768px) {
     #mobileJoystick {
-        border: solid 4px var(--softGrey-opacity-50);
-        background-color: var(--grey-opacity-50);
+        border: solid 4px var(--color-softGrey-opacity-50);
+        background-color: var(--color-grey-opacity-50);
         bottom: 2rem;
         right: 2rem;
         width: 10rem;
@@ -262,8 +288,8 @@ p {
         position: absolute;
     }
     #mobileJoystickCentre {
-        background-color: var(--grey-opacity-50);
-        border: solid 2px var(--softGrey-opacity-50);
+        background-color: var(--color-grey-opacity-50);
+        border: solid 2px var(--color-softGrey-opacity-50);
         width: 4rem;
         height: 4rem;
         border-radius: 50%;
@@ -291,7 +317,7 @@ p {
 .btn-download__icon {
     width: 4.8rem;
     height: 4.8rem;
-    background-color: var(--color-bg-controls);
+    background-color: var(--color-secondary);
     border: solid 2px var(--color-secondary);
     border-radius: 0 1rem 1rem 0;
     padding: 0.5rem;
@@ -300,7 +326,7 @@ p {
     width: 20rem;
     background-color: var(--color-white-med);
     border-radius: 1rem;
-    border: 1px solid var(--black-color-pure);
+    border: 1px solid var(--color-black);
     position: absolute;
     z-index: -1;
     transform: translate(0, -40%) rotateX(90deg);
@@ -341,7 +367,7 @@ section[class^="scene__"] {
 }
 @media (max-width: 480px) {
     .scene__home {
-        padding: 10% 0 0 7rem;
+        padding: 10% 0 0 8rem;
     }
     .home__title {
         font-size: 4.8rem;
@@ -654,7 +680,7 @@ section[class^="scene__"] {
     font-weight: 900;
     text-align: center;
     min-width: 20rem;
-    color: var(--black-color-pure);
+    color: var(--color-black);
 }
 .dialogue__button {
     margin: 1rem 0 1rem 0;
@@ -663,15 +689,15 @@ section[class^="scene__"] {
     font-weight: 900;
     font-size: 1.6rem;
     text-transform: uppercase;
-    border: solid 2px var(--green-color-dark);
+    border: solid 2px var(--color-green-dark);
     border-radius: 0.7rem;
-    background-color: var(--green-color-med);
+    background-color: var(--color-green-med);
     color: var(--color-white-med);
     cursor: pointer;
 }
 .dialogue__button--red {
-    background-color: var(--red-color-med);
-    border-color: var(--red-color-dark);
+    background-color: var(--color-red-med);
+    border-color: var(--color-red-dark);
 }
 .dialogue__button:hover {
     transform: scale(1.1);

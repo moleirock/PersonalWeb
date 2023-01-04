@@ -1,4 +1,5 @@
 import { Dust } from "./Particles.js";
+import { hideNavigation, showNavigation } from "../Functions/hideShowNavigation.js";   
 
 const states = {
     RUNNING_RIGHT: 0,
@@ -25,8 +26,7 @@ export class RunningRight extends State {
         this.player.maxFrame = 41;
         this.player.fps = 64;
         this.player.maxSpeed = -this.runningSpeed;
-        toggleTheme.style.transform = "translate(6rem)";
-        navigationControl.style.transform = "translate(-100%)";
+        hideNavigation();
     }
     handleInput(input) {
         this.player.app.particles.push(new Dust(this.player.app, this.player.x + this.player.width * 0.5, this.player.app.height, 1));
@@ -49,8 +49,7 @@ export class RunningLeft extends State {
         this.player.maxFrame = 41;
         this.player.fps = 64;
         this.player.maxSpeed = this.runningSpeed;
-        navigationControl.style.transform = "unset";
-        toggleTheme.style.transform = "unset";
+        showNavigation();
     }
     handleInput(input) {
         this.player.app.particles.push(new Dust(this.player.app, this.player.x + this.player.width * 0.5, this.player.app.height, -1));

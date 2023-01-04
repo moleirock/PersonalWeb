@@ -1,6 +1,6 @@
 {
     "home": {
-        "title": "Quién es <br/><span class=\"text-color-secondary font-size-60\">Alberto Moleiro</span>?"
+        "title": "Quién es <br/><span class=\"text-color-secondary home__title--big\">Alberto Moleiro</span>?"
     },
     "about": {
         "title": "<span class=\"text-color-secondary\">Sobre </span>Mí",

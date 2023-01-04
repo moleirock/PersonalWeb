@@ -1,6 +1,6 @@
 const filterButtons = document.querySelectorAll(".filter-list__item");
 const projectItems = document.querySelectorAll(".project__item");
-const projectContainer = document.querySelector(".projexts__content");
+const projectContainer = document.querySelector(".projects__content");
 export function projectFilter(){
     filterButtons.forEach((button) => {
         button.addEventListener("click", (e) => {
