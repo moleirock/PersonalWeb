@@ -10,13 +10,13 @@
 
     --color-secondary: #ae2754;
 
-    --white-color-med: #dbdbdb;
+    --color-white-med: #dbdbdb;
     --black-color-pure: #000000;
     --green-color-med: rgb(31, 156, 0);
     --green-color-dark: rgb(17, 87, 0);
     --red-color-med: rgb(156, 0, 0);
     --red-color-dark: rgb(87, 0, 0);
-    --grey-color: rgb(54, 54, 54);
+    --color-grey: rgb(54, 54, 54);
     --grey-opacity-50: rgba(83, 83, 83, 0.363);
     --softGrey-opacity-50: rgba(182, 182, 182, 0.452);
 }
@@ -96,7 +96,7 @@ p {
 
 /* ScrollBar */
 * {
-    scrollbar-color: var(--white-color-med) rgba(0, 0, 0, 0);
+    scrollbar-color: var(--color-white-med) rgba(0, 0, 0, 0);
     scrollbar-width: thin;
 }
 *::-webkit-scrollbar {
@@ -192,16 +192,16 @@ p {
     padding: 1rem;
 }
 .navigation-forbidden {
-    border: var(--red-color-med) solid 3px;
+    border: var(--color-grey) solid 3px;
     border-radius: 2rem;
-    background: repeating-linear-gradient(45deg, var(--red-color-med), var(--red-color-med) 5px, #e5e5f700 5px, #e5e5f700 25px);
+    background: repeating-linear-gradient(45deg, var(--color-grey), var(--color-grey) 5px, #e5e5f700 5px, #e5e5f700 25px);
     cursor: not-allowed;
 }
 .navigation-forbidden:before {
     content: "FINISH TOUR";
     font-weight: bold;
     transform: rotate(270deg) translateX(10%);
-    background-color: var(--red-color-med);
+    background-color: var(--color-grey);
     min-width: 13rem;
     padding: 0rem 0.5rem;
     position: absolute;
@@ -219,6 +219,11 @@ p {
     align-items: center;
     cursor: pointer;
     z-index: 2;
+    transition: all 0.2s ease-in-out 0s;
+}
+.button-control:hover {
+    transform: translateY(-.5rem) scale(1.05);
+    box-shadow: 0 0.3rem 0rem var(--color-text);
 }
 
 .button-control--theme {
@@ -226,7 +231,6 @@ p {
     top: 1rem;
     right: 1rem;
     z-index: 4;
-    transition: transform 0.5s ease-in-out 0s;
 }
 
 .language {
@@ -240,6 +244,7 @@ p {
     width: 3rem;
     cursor: pointer;
     border-radius: 20%;
+    transition: all 0.2s ease-in-out 0s;
 }
 .language__icon:hover {
     transform: scale(1.1);
@@ -281,6 +286,7 @@ p {
     border-radius: 1rem 0 0 1rem;
     font-weight: bold;
     background-color: var(--color-bg);
+    transition: all 0.3s ease-in-out 0s;
 }
 .btn-download__icon {
     width: 4.8rem;
@@ -290,27 +296,26 @@ p {
     border-radius: 0 1rem 1rem 0;
     padding: 0.5rem;
 }
-.btn-download__img{
-   width: 20rem;
-   background-color: var(--white-color-med);
-   border-radius: 1rem;
-   border: 1px solid var(--black-color-pure);
-   position: absolute;
-   z-index: -1;
-   transform: translate(0,-40%) rotateX(90deg);
+.btn-download__img {
+    width: 20rem;
+    background-color: var(--color-white-med);
+    border-radius: 1rem;
+    border: 1px solid var(--black-color-pure);
+    position: absolute;
+    z-index: -1;
+    transform: translate(0, -40%) rotateX(90deg);
+    transition: all 0.3s ease-in-out 0s;
 }
 .btn-download:hover .btn-download__text {
     color: var(--color-secondary);
     border-color: var(--color-secondary);
-    transition: all 0.3s ease-in-out 0s;
 }
 .btn-download:hover .btn-download__img {
-    transform: translate(0,4.8rem) rotateX(0deg);
-    transition: all 0.3s ease-in-out 0s;
+    transform: translate(0, 4.8rem) rotateX(0deg);
 }
 
-/* HOME */
-.scene {
+/* SCENE SETTINGS */
+.scenes {
     display: flex;
     width: 100%;
     height: 100vh;
@@ -319,20 +324,30 @@ p {
 section[class^="scene__"] {
     min-width: 100%;
 }
+/* HOME */
 .scene__home {
-    padding: 2rem 0 0 7rem;
+    padding: 5% 0 0 15%;
 }
 .home__title {
+    font-size: 6rem;
 }
-
+.home__title--big {
+    font-size: 10rem;
+}
 @media (max-width: 768px) {
     .home__title {
         width: 80%;
     }
 }
 @media (max-width: 480px) {
+    .scene__home {
+        padding: 10% 0 0 7rem;
+    }
     .home__title {
-        padding-top: unset;
+        font-size: 4.8rem;
+    }
+    .home__title--big {
+        font-size: 6rem;
     }
 }
 /* ABOUT */
@@ -418,11 +433,11 @@ section[class^="scene__"] {
     font-size: 1.6rem;
     font-weight: bold;
     background-color: var(--color-bg-opacity-50);
+    transition: all 0.3s ease-in-out 0s;
 }
 .filter-list__item:hover {
     border-color: var(--color-secondary);
     color: var(--color-secondary);
-    transition: all 0.3s ease-in-out 0s;
 }
 .filterActive {
     border-color: var(--color-secondary);
@@ -476,7 +491,7 @@ section[class^="scene__"] {
     width: 50%;
     padding: 2rem;
     background-color: var(--color-bg-opacity-50);
-    backdrop-filter: blur(3px) a;
+    backdrop-filter: blur(3px);
     border-radius: 1rem;
     display: flex;
     flex-direction: column;
@@ -512,22 +527,23 @@ section[class^="scene__"] {
 .contact__media {
     width: 5rem;
     height: 5rem;
-    background-color: var(--white-color-med);
+    background-color: var(--color-white-med);
     border: solid 2px var(--color-text);
     border-radius: 50%;
     padding: 1rem;
+    transition: all 0.3s ease-in-out 0s;
 }
 .contact__media:hover {
     background-color: var(--color-secondary);
     border-color: var(--color-secondary);
     transform: scale(1.1);
-    transition: all 0.3s ease-in-out 0s;
 }
 
 .contact__location {
     width: 50%;
     padding: 2rem;
     background-color: var(--color-bg-opacity-50);
+    backdrop-filter: blur(3px);
     border-radius: 1rem;
 }
 .contact__location h3 {
@@ -604,7 +620,7 @@ section[class^="scene__"] {
     top: 55%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color: var(--white-color-med);
+    background-color: var(--color-white-med);
     border-radius: 50%;
     display: grid;
     place-items: center;
@@ -650,7 +666,7 @@ section[class^="scene__"] {
     border: solid 2px var(--green-color-dark);
     border-radius: 0.7rem;
     background-color: var(--green-color-med);
-    color: var(--white-color-med);
+    color: var(--color-white-med);
     cursor: pointer;
 }
 .dialogue__button--red {
@@ -668,7 +684,7 @@ section[class^="scene__"] {
     transform: rotate(-50deg);
     border-top: 2rem solid transparent;
     border-bottom: 2rem solid transparent;
-    border-right: 7rem solid var(--white-color-med);
+    border-right: 7rem solid var(--color-white-med);
     width: 0;
     height: 0;
 }
@@ -693,9 +709,7 @@ section[class^="scene__"] {
 .text-color-secondary {
     color: var(--color-secondary);
 }
-.font-size-60 {
-    font-size: 6rem;
-}
+
 .font-size-16 {
     font-size: 1.6rem;
 }
