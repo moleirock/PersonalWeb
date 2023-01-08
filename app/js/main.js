@@ -10,21 +10,21 @@ window.addEventListener("load", () => {
     // CANVAS PLAYER SETTINGS----------------------------------------------------
     const canvas = document.getElementById("canvasPlayer");
     const ctx = canvas.getContext("2d");
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
+    canvas.width = document.querySelector("body").clientWidth;
+    canvas.height = document.querySelector("body").clientHeight;
     let lastTime = 0;
 
     // CANVAS COLLISION SETTINGS------------------------------------------
     const canvasCollision = document.getElementById("canvasCollision");
     const ctxCollision = canvasCollision.getContext("2d", { willReadFrequently: true });
-    canvasCollision.width = window.innerWidth;
-    canvasCollision.height = window.innerHeight;
+    canvasCollision.width = document.querySelector("body").clientWidth;
+    canvasCollision.height = document.querySelector("body").clientHeight;
 
     // CANVAS BACKGROUND SETTINGS
     const canvasBackground = document.getElementById("canvasBackground");
     const ctxBackground = canvasBackground.getContext("2d");
-    canvasBackground.width = window.innerWidth;
-    canvasBackground.height = window.innerHeight;
+    canvasBackground.width = document.querySelector("body").clientWidth;
+    canvasBackground.height = document.querySelector("body").clientHeight;
 
     // RESIZE RELOAD------------------------------------------------------
     /* window.addEventListener("resize", () => {

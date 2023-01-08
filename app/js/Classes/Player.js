@@ -2,7 +2,6 @@ import { RunningRight, RunningLeft, JumpingRight, JumpingLeft, StandingRight, St
 
 // DOM SELECTOR
 const playerImage = document.getElementById("playerImage");
-const endScreen = document.querySelector(".scene__contact").getBoundingClientRect().left;
 const dialogue = document.getElementById("dialogue");
 const sections = document.getElementById("sections");
 const navigationControls = document.getElementById("navigationControls");
@@ -26,7 +25,7 @@ export class Player {
         this.maxFrame = 17;
         this.speed = 0;
         this.maxSpeed = 0;
-        this.endScreen = endScreen;
+        this.endScreen = app.width*3;
         // state manangemnt
         this.states = [
             new RunningRight(this),

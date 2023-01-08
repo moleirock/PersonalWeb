@@ -12,7 +12,7 @@ class Layer {
         this.boudaryRight;
     }
     update() {
-        this.boudaryRight = -this.app.contactLeftX;
+        this.boudaryRight = -this.app.width*3;
 
         if (this.app.player.speed < this.boundaryLeft && this.app.player.speed > this.boudaryRight) {
             if (this.x < -this.width) this.x = 0;
