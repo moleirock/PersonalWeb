@@ -2,22 +2,22 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-    <meta name="description" content="!Bienvenido a la Web personal de Alberto Moleiro Sánchez!😄" />
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="description" content="!Bienvenido a la Web personal de Alberto Moleiro Sánchez!😄">
 
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
         href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&family=Roboto:wght@400;700;900&display=swap"
-        rel="stylesheet" />
+        rel="stylesheet">
 
-    <link rel="preload" href="css/normalize.css" as="style" />
-    <link rel="stylesheet" href="css/normalize.css" />
+    <link rel="preload" href="css/normalize.css" as="style">
+    <link rel="stylesheet" href="css/normalize.css">
 
-    <link rel="preload" href="css/style.css" as="style" />
-    <link rel="stylesheet" href="css/style.css" />
+    <link rel="preload" href="css/style.css" as="style">
+    <link rel="stylesheet" href="css/style.css">
 
     <title>Alberto Moleiro Web Developer</title>
 </head>
@@ -33,8 +33,8 @@
     </div>
     <div id="language" class="language">
         <img class="language__icon display-none" id="flagGb" src="assets/icons/gb.svg" alt="United Kingdom flag"
-            data-language="gb" />
-        <img class="language__icon" id="flagEs" src="assets/icons/es.svg" alt="Spanish flag" data-language="es" />
+            data-language="gb">
+        <img class="language__icon" id="flagEs" src="assets/icons/es.svg" alt="Spanish flag" data-language="es">
     </div>
     <nav id="navigationControl" class="navigation">
         <div id="navigationControls" class="navigation__controls">
@@ -61,11 +61,11 @@
             <div class="scenes">
                 <section class="scene__home" data-name="home">
                     <h1 data-section="home" data-element="title" class="home__title">
-                        Who is <br /><span class="home__title--big text-color-secondary">Alberto Moleiro</span>?
+                        Who is <br><span class="home__title--big text-color-secondary">Alberto Moleiro</span>?
                     </h1>
-                    <a class="btn-download">
+                    <a class="btn-download" href="downloads/CV-Alberto-Moleiro-Sanchez.pdf" target="_blank" rel="nofollow noopener noreferrer">
                         <span class="btn-download__text">Download CV</span>
-                        <img class="icon btn-download__icon" src="assets/icons/downloadIcon.svg" alt="download icon" />
+                        <img class="icon btn-download__icon" src="assets/icons/downloadIcon.svg" alt="download icon">
                         <img class="btn-download__img" src="assets/img/cv.svg" alt="">
                     </a>
                 </section>
@@ -75,11 +75,11 @@
                     </h2>
                     <div class="about__content">
                         <picture>
-                            <source srcset="assets/img/demon-personal-image.webp" type="image/webp" />
+                            <source srcset="assets/img/demon-personal-image.webp" type="image/webp">
                             <img class="about__image" width="200" height="300" src="assets/img/demon-personal-image.png"
-                                alt="Alberto Moleiro`s portrait with drawings on it" />
+                                alt="Alberto Moleiro`s portrait with drawings on it">
                         </picture>
-                        <article class="about__text" data-section="about" data-element="description">
+                        <div class="about__text" data-section="about" data-element="description">
                             <p>&#128075; Hi! My name is <span class="font-weight-700">Alberto</span>, I'm a restless
                                 mind that was
                                 born in Madrid 30 years ago.
@@ -102,9 +102,7 @@
                                     interested in working on a project that would complement my training as a
                                     developer.</span>.
                             </p>
-
-
-                        </article>
+                        </div>
                     </div>
                 </section>
                 <section class="scene__projects" data-name="projects">
@@ -126,36 +124,44 @@
                             <li class="project__item" data-technologies="frontend js">
                                 <picture>
                                     <source srcset="assets/img/antonioWebMiniature.webp" type="image/webp">
-                                    
+
                                     <img width="460" height="279" src="assets/img/antonioWebMiniature.jpg"
-                                        alt="Antonio Moleiro Web Miniature" />
+                                        alt="Antonio Moleiro Web Miniature">
                                 </picture>
                                 <div class="project__itemOverlay">
-                                    <a href="https://github.com/moleirock/AntonioWeb" target="_blank" class="project__itemGit"><img src="assets/icons/githubIcon.svg" alt="GitHub Icon"></a>
-                                    <a href="https://astonishing-raindrop-347b61.netlify.app/" target="_blank" class="project__itemLink">Visit Web</a>
+                                    <a href="https://github.com/moleirock/AntonioWeb" target="_blank" rel="nofollow noopener noreferrer"
+                                        class="project__itemGit"><img src="assets/icons/githubIcon.svg"
+                                            alt="GitHub Icon"></a>
+                                    <a href="https://astonishing-raindrop-347b61.netlify.app/" target="_blank" rel="nofollow noopener noreferrer"
+                                        class="project__itemLink">Visit Web</a>
                                 </div>
                             </li>
                             <li class="project__item" data-technologies="frontend js">
                                 <picture>
                                     <source srcset="assets/img/personalWebMiniature.webp" type="image/webp">
-                                    
+
                                     <img width="460" height="224" src="assets/img/personalWebMiniature.jpg"
-                                        alt="Alberto Moleiro Web Miniature" />
+                                        alt="Alberto Moleiro Web Miniature">
                                 </picture>
                                 <div class="project__itemOverlay">
-                                    <a href="https://github.com/moleirock/PersonalWeb" target="_blank" class="project__itemGit"><img src="assets/icons/githubIcon.svg" alt="GitHub Icon"></a>
+                                    <a href="https://github.com/moleirock/PersonalWeb" target="_blank" rel="nofollow noopener noreferrer"
+                                        class="project__itemGit"><img src="assets/icons/githubIcon.svg"
+                                            alt="GitHub Icon"></a>
                                 </div>
                             </li>
                             <li class="project__item" data-technologies="frontend js sass">
                                 <picture>
                                     <source srcset="assets/img/musicFestivalMiniature.webp" type="image/webp">
-                                    
+
                                     <img width="460" height="224" src="assets/img/musicFestivalMiniature.jpg"
-                                        alt="Alberto Moleiro Web Miniature" />
+                                        alt="Alberto Moleiro Web Miniature">
                                 </picture>
                                 <div class="project__itemOverlay">
-                                    <a href="https://github.com/moleirock/MusicFestival" target="_blank" class="project__itemGit"><img src="assets/icons/githubIcon.svg" alt="GitHub Icon"></a>
-                                    <a href="https://frabjous-kashata-b56c75.netlify.app/" target="_blank" class="project__itemLink">Visit Web</a>
+                                    <a href="https://github.com/moleirock/MusicFestival" target="_blank" rel="nofollow noopener noreferrer"
+                                        class="project__itemGit"><img src="assets/icons/githubIcon.svg"
+                                            alt="GitHub Icon"></a>
+                                    <a href="https://frabjous-kashata-b56c75.netlify.app/" target="_blank" rel="nofollow noopener noreferrer"
+                                        class="project__itemLink">Visit Web</a>
                                 </div>
                             </li>
                         </ul>
@@ -203,10 +209,10 @@
                                     <div class="contact__media"><img src="assets/icons/linkedinIcon.svg"
                                             alt="linkedin logo"></div>
                                 </a>
-                                <a class="btn-download">
+                                <a class="btn-download" href="downloads/CV-Alberto-Moleiro-Sanchez.pdf" target="_blank" rel="nofollow noopener noreferrer">
                                     <span class="btn-download__text">Download CV</span>
                                     <img class="icon btn-download__icon" src="assets/icons/downloadIcon.svg"
-                                        alt="download icon" />
+                                        alt="download icon">
                                 </a>
                             </div>
                         </div>
@@ -223,11 +229,11 @@
         </div>
         <!-- CANVAS SETTINGS -->
         <picture>
-            <source srcset="assets/img/player10.webp" type="image/webp" media="(max-width:480px)" />
-            <source srcset="assets/img/player15.webp" type="image/webp" media="(min-width:480px)" />
-            <source srcset="assets/img/player15.png" type="image/png" media="(min-width:480px)" />
+            <source srcset="assets/img/player10.webp" type="image/webp" media="(max-width:480px)">
+            <source srcset="assets/img/player15.webp" type="image/webp" media="(min-width:480px)">
+            <source srcset="assets/img/player15.png" type="image/png" media="(min-width:480px)">
             <img id="playerImage" width="200" height="300" src="assets/img/player10.png"
-                alt="cartoon of a small gentleman with glasses" />
+                alt="cartoon of a small gentleman with glasses">
         </picture>
 
         <picture>
@@ -276,8 +282,8 @@
     <div class="shortHeight">
         <div class="shortHeight__image">
             <picture>
-                <source srcset="assets/img/playerStanding.webp" type="image/webp" />
-                <img width="200" height="300" src="assets/img/playerStanding.png" alt="" />
+                <source srcset="assets/img/playerStanding.webp" type="image/webp">
+                <img width="200" height="300" src="assets/img/playerStanding.png" alt="">
             </picture>
         </div>
         <div class="dialogue__box dialogue__box--width90">
