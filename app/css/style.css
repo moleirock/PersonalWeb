@@ -722,12 +722,12 @@ section[class^="scene__"] {
     30% {
         transform: scale(1) translate(-50%, -50%);
     }
-    40% {
+   /*  40% {
         transform: scale(0.97) translate(-50%, -50%);
     }
     50% {
         transform: scale(1) translate(-50%, -50%);
-    }
+    } */
 }
 .dialogue__text {
     font-family: var(--font-comic);
@@ -783,6 +783,7 @@ section[class^="scene__"] {
 }
 .control__img {
     max-width: 30rem;
+    margin: 1rem 2rem 0rem 2rem;
 }
 
 /* UTILITIES */
