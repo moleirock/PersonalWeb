@@ -22,13 +22,12 @@
     },
     "dialogue": {
         "tour": ["Do you want a guided tour?"],
-        "controlsBlocked": ["Can't use controls before end guide tour!"],
         "home": [
-            "Do you really want to know who Alberto is?",
-            "Well, I will tell you... He IS THE WORST HUMAN in the world!!",
+            "I notice that you want to know who Alberto is.",
+            "Well, I'll tell you... He IS THE WORST HUMAN in the world!!",
             "Sure you're wondering why I hate him.",
             "But first, you must know how to move.",
-            "<picture><img class='control__img' src='assets/img/controls.png' alt='control keys'/></picture>"
+            "<img class='control__img' src='assets/img/controls.png' alt='control keys'/>"
         ],
         "about": [
             "Wow! Who drew it? I mean... he's ugly enough without those drawings.",

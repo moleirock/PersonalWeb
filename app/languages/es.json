@@ -24,16 +24,16 @@
         "tour": ["¿Quieres una visita guiada?"],
         "controlsBlocked": ["No se puden usar los controles hasta terminar la visita guiada."],
         "home": [
-            "De verdad quieres saber quien es Alberto?",
+            "Veo que quieres saber quién es Alberto.",
             "Bien, te lo diré... Él es EL PEOR HUMANO del mundo!!",
-            "Seguro que te preguntas porque le odio.",
+            "Seguro que te preguntas por qué le odio.",
             "Pero primero, debes aprender a moverte.",
             "<picture><img class='control__img' src='assets/img/controls.png' alt='control keys'/></picture>"
         ],
         "about": [
-            "¡Vaya! ¿quién habrá dibujado eso? ",
+            "¡Vaya! ¿Quién habrá pintado eso? ",
             "Sólo lo pregunto porque él ya es bastante feo sin añadir nada.",
-            "Bueno... una cosa está clara. Nunca sabremos quien lo hizo.",
+            "Bueno... una cosa está clara. Nunca sabremos quién lo hizo.",
             "Continuemos con la visita. Aquí es dónde el \"Señor Ego\" se describe."
         ],
         "projects": [
@@ -54,7 +54,7 @@
             "Me encomendó una tarea repetitiva y aburrida.",
             "¡No te imaginas cuantas veces he mostrado está página!",
             "Y lo peor de todo, según he sido creado solo puedo mirar al frente o a los lados,¡no tengo ni idea de como es lo que tengo detrás!",
-            "Ni si quiera puedo mostrar lo enfado que estoy, mi cara es siempre la misma.",
+            "Ni si quiera puedo mostrar lo enfadado que estoy, mi cara es siempre la misma.",
             "Estás son las razones por las que le odio."
         ]
     }
