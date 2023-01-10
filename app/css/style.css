@@ -240,7 +240,7 @@ a{
     top: 1rem;
     right: 1rem;
     z-index: 4;
-    transition: right 0.5s ease-in-out 0s, transform 0.2s ease-in-out 0s;
+    transition: all 0.3s ease-in-out 0s;
 }
 #dropMenu{
     position: absolute;
@@ -803,6 +803,9 @@ section[class^="scene__"] {
 
 .zIndexNegative {
     z-index: -1;
+}
+.translate-right-up{
+    transform: translate(110%, -110%);
 }
 
 .outView {
