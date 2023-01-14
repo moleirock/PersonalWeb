@@ -27,9 +27,9 @@ window.addEventListener("load", () => {
     canvasBackground.height = document.querySelector("body").clientHeight;
 
     // RESIZE RELOAD------------------------------------------------------
-    /* window.addEventListener("resize", () => {
+    window.addEventListener("resize", () => {
         window.location.reload();
-    }); */
+    });
 
     // VIEWPORT MOBILE UNITS
     let vh = window.innerHeight * 0.01;
