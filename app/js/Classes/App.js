@@ -11,6 +11,8 @@ const sections = document.querySelectorAll("section[class^='scene__']");
 
 const dialogueButtonReject = document.getElementById("dialogueButtonReject");
 const dialogueButtonAccept = document.getElementById("dialogueButtonAccept");
+const aboutImage = document.getElementById("aboutImage");
+const aboutImageDemon = document.getElementById("aboutImageDemon");
 
 export class App {
     constructor(width, height) {
@@ -69,8 +71,12 @@ export class App {
             this.player.buttonProjects.classList.toggle("zIndexNegative");
             this.player.buttonContact.classList.toggle("zIndexNegative");
         };
-
         toggleShowingControls();
+        
+        
+        aboutImage.classList.add("display-none");
+        aboutImageDemon.classList.remove("display-none");
+
 
         const observer = new IntersectionObserver(
             (entries) => {
